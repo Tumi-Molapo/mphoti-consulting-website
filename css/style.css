@@ -909,4 +909,296 @@
 }
 /*** copyright end ***/
 
+/* =========================================
+   ABOUT PAGE (Mphoti layout, template green)
+   var(--bs-primary) = the template's green
+   ========================================= */
+
+/* ---------- Section labels with the little dash ---------- */
+.mp-label {
+    display: inline-flex;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--bs-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 14px;
+}
+
+.mp-label::after {
+    content: "";
+    width: 18px;
+    height: 2px;
+    background: var(--bs-primary);
+    margin-left: 10px;
+}
+
+/* ---------- About ---------- */
+.mp-about p {
+    font-size: 16px;
+    line-height: 30px;
+    margin-bottom: 24px;
+}
+
+/* Skill chips under the text */
+.mp-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.mp-skills span {
+    background: color-mix(in srgb, var(--bs-primary) 10%, white);
+    color: var(--bs-primary);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.mp-skills span i {
+    margin-right: 6px;
+}
+
+.mp-skills span:hover {
+    background: var(--bs-primary);
+    color: var(--bs-white);
+}
+
+/* Photo fills the whole right column */
+.mp-about-img {
+    position: relative;
+    height: 100%;
+    min-height: 520px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.mp-about-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* White play button with a pulsing ring */
+.mp-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--bs-white);
+    color: var(--bs-primary);
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.mp-play::before {
+    content: "";
+    position: absolute;
+    inset: -16px;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    animation: mp-pulse 2s infinite;
+}
+
+.mp-play:hover {
+    background: var(--bs-primary);
+    color: var(--bs-white);
+}
+
+@keyframes mp-pulse {
+    0%   { transform: scale(0.9); opacity: 1; }
+    100% { transform: scale(1.4); opacity: 0; }
+}
+
+/* Floating "10+ Years" badge on the photo */
+.mp-exp-badge {
+    position: absolute;
+    left: 25px;
+    bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--bs-primary);
+    color: var(--bs-white);
+    padding: 16px 22px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.mp-exp-num {
+    font-family: 'Raleway', sans-serif;
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.mp-exp-text {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.3;
+    text-transform: uppercase;
+}
+
+/* ---------- Green stats band ---------- */
+.mp-stats {
+    background: var(--bs-primary);
+    padding: 80px 0;
+}
+
+.mp-stat {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.mp-stat-num {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 200;
+    font-size: 60px;
+    line-height: 1;
+    color: var(--bs-white);
+}
+
+.mp-stat-label {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--bs-white);
+    text-transform: uppercase;
+}
+
+/* ---------- Current Affairs ---------- */
+.mp-heading {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+    font-size: 44px;
+    color: var(--bs-dark);
+}
+
+.mp-heading span {
+    color: var(--bs-primary);
+    font-weight: 400;
+}
+
+.mp-post-img {
+    position: relative;
+    height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.mp-post-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.mp-post:hover .mp-post-img img {
+    transform: scale(1.06);
+}
+
+.mp-badge {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    background: var(--bs-primary);
+    color: var(--bs-white);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 5px 14px;
+    border-radius: 20px;
+}
+
+/* Title with a line on its left that turns green on hover */
+.mp-post-title {
+    border-left: 2px solid var(--bs-dark);
+    padding-left: 20px;
+    margin: 30px 0 25px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 1.6;
+    color: var(--bs-dark);
+    transition: 0.3s;
+}
+
+.mp-post:hover .mp-post-title {
+    border-color: var(--bs-primary);
+    color: var(--bs-primary);
+}
+
+.mp-arrow {
+    width: 44px;
+    height: 44px;
+    border: 1px solid #e3e3e3;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--bs-dark);
+    transition: 0.3s;
+}
+
+.mp-post:hover .mp-arrow {
+    background: var(--bs-primary);
+    border-color: var(--bs-primary);
+    color: var(--bs-white);
+}
+
+/* Quote card with a light green tint */
+.mp-quote {
+    background: color-mix(in srgb, var(--bs-primary) 8%, white);
+    border-radius: 10px;
+    padding: 40px 30px;
+    height: 100%;
+}
+
+.mp-quote-icon {
+    color: var(--bs-primary);
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.mp-quote p {
+    font-size: 20px;
+    line-height: 1.5;
+    color: var(--bs-dark);
+    margin-bottom: 15px;
+}
+
+.mp-quote small {
+    font-weight: 600;
+    text-transform: uppercase;
+    opacity: 0.6;
+}
+
+.mp-tag {
+    display: inline-block;
+    background: var(--bs-primary);
+    color: var(--bs-white);
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-right: 8px;
+}
+
+/* ---------- Phones ---------- */
+@media (max-width: 767px) {
+    .mp-heading { font-size: 32px; }
+    .mp-stat-num { font-size: 44px; }
+    .mp-about-img { min-height: 360px; }
+}
+
 
