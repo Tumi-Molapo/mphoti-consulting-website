@@ -44,9 +44,8 @@
         <!-- Navbar & Hero Start -->
         <div class="container-fluid position-relative p-0">
             <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
-                <a href="" class="navbar-brand p-0">
-                    <h1 class="text-primary"><i class="fas fa-search-dollar me-3"></i>Stocker</h1>
-                    <!-- <img src="img/logo.png" alt="Logo"> -->
+                       <a href="" class="navbar-brand p-0">
+                    <img src="img/logo.png" alt="mphoti Logo" style="max-height: 60px;">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="fa fa-bars"></span>
@@ -67,8 +66,37 @@
                         </div>
                         <a href="careers.html" class="nav-item nav-link">Careers</a>
                         <a href="contact.html" class="nav-item nav-link active">Contact Us</a>
+    <a href="index.html" class="navbar-brand p-0">
+        <h1 class="text-primary"><i class="fas fa-search-dollar me-3"></i>Stocker</h1>
+        <!-- <img src="img/logo.png" alt="Logo"> -->
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="fa fa-bars"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto py-0">
+            <a href="index.html" class="nav-item nav-link">Home</a>
+            <a href="about.html" class="nav-item nav-link">About Us</a>
 
-            </nav>
+            <div class="nav-item dropdown" id="servicesDropdown">
+                <!-- Plain link: always goes to service.html -->
+                <a href="service.html" class="nav-link">Services <i class="fas fa-angle-down ms-1 d-none d-lg-inline"></i></a>
+
+                <!-- Arrow for phones/tablets only: opens the sub-menu without leaving the page -->
+                <a href="#" class="nav-link dropdown-toggle d-lg-none" data-bs-toggle="dropdown" aria-label="Show service pages">More services</a>
+
+                <div class="dropdown-menu m-0">
+                    <a href="artificial.html" class="dropdown-item">Artificial Intelligence</a>
+                    <a href="infrastructure.html" class="dropdown-item">IT Infrastructure Solutions</a>
+                    <a href="security.html" class="dropdown-item">Cyber Security</a>
+                </div>
+            </div>
+
+            <a href="careers.html" class="nav-item nav-link">Careers</a>
+            <a href="contact.html" class="nav-item nav-link active">Contacts</a>
+        </div>
+    </div>
+</nav>
 
             <!-- Header Start -->
             <div class="container-fluid bg-breadcrumb">
@@ -208,9 +236,8 @@
                 <div class="row g-5">
                     <div class="col-md-6 col-lg-6 col-xl-4">
                         <div class="footer-item">
-                            <a href="index.html" class="p-0">
-                                <h4 class="text-white"><i class="fas fa-search-dollar me-3"></i>Stocker</h4>
-                                <!-- <img src="img/logo.png" alt="Logo"> -->
+                                                   <a href="index.html" class="p-0">
+                                <img src="img/logo.png" alt="Stocker Logo" style="max-height: 50px;">
                             </a>
                             <p class="mb-4">Dolor amet sit justo amet elitr clita ipsum elitr est.Lorem ipsum dolor sit amet, consectetur adipiscing...</p>
 
