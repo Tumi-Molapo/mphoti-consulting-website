@@ -43,9 +43,9 @@
 
         <!-- Navbar & Hero Start -->
         <div class="container-fluid position-relative p-0">
-            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
-                       <a href="" class="navbar-brand p-0">
-                    <img src="img/logo.png" alt="mphoti Logo" style="max-height: 60px;">
+   <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+                <a href="index.html" class="navbar-brand p-0">
+                    <img src="img/logo.png" alt="Mphoti Logo" style="max-height: 60px;">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="fa fa-bars"></span>
@@ -53,50 +53,27 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0">
                         <a href="index.html" class="nav-item nav-link">Home</a>
-                        <a href="about.html" class="nav-item nav-link">About</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link" data-bs-toggle="dropdown">
-                                <span class="dropdown-toggle">Services</span>
-                            </a>
+                        <a href="about.html" class="nav-item nav-link">About Us</a>
+
+                        <div class="nav-item dropdown" id="servicesDropdown">
+                            <!-- Plain link: always goes to service.html -->
+                            <a href="service.html" class="nav-link">Services <i class="fas fa-angle-down ms-1 d-none d-lg-inline"></i></a>
+
+                            <!-- Arrow for phones/tablets only: opens the sub-menu without leaving the page -->
+                            <a href="#" class="nav-link dropdown-toggle d-lg-none" data-bs-toggle="dropdown" aria-label="Show service pages">More services</a>
+
                             <div class="dropdown-menu m-0">
-                                <a href="service.html" class="dropdown-item">Our Services</a>
-                                <a href="feature.html" class="dropdown-item">Our Features</a>
-                                <a href="offer.html" class="dropdown-item">Our Offer</a>
+                                <a href="artificial.html" class="dropdown-item">Artificial Intelligence</a>
+                                <a href="infrastructure.html" class="dropdown-item">IT Infrastructure Solutions</a>
+                                <a href="security.html" class="dropdown-item">Cyber Security</a>
                             </div>
                         </div>
+
                         <a href="careers.html" class="nav-item nav-link">Careers</a>
-                        <a href="contact.html" class="nav-item nav-link active">Contact Us</a>
-    <a href="index.html" class="navbar-brand p-0">
-        <h1 class="text-primary"><i class="fas fa-search-dollar me-3"></i>Stocker</h1>
-        <!-- <img src="img/logo.png" alt="Logo"> -->
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-        <span class="fa fa-bars"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-        <div class="navbar-nav ms-auto py-0">
-            <a href="index.html" class="nav-item nav-link">Home</a>
-            <a href="about.html" class="nav-item nav-link">About Us</a>
-
-            <div class="nav-item dropdown" id="servicesDropdown">
-                <!-- Plain link: always goes to service.html -->
-                <a href="service.html" class="nav-link">Services <i class="fas fa-angle-down ms-1 d-none d-lg-inline"></i></a>
-
-                <!-- Arrow for phones/tablets only: opens the sub-menu without leaving the page -->
-                <a href="#" class="nav-link dropdown-toggle d-lg-none" data-bs-toggle="dropdown" aria-label="Show service pages">More services</a>
-
-                <div class="dropdown-menu m-0">
-                    <a href="artificial.html" class="dropdown-item">Artificial Intelligence</a>
-                    <a href="infrastructure.html" class="dropdown-item">IT Infrastructure Solutions</a>
-                    <a href="security.html" class="dropdown-item">Cyber Security</a>
+                        <a href="contact.html" class="nav-item nav-link active">Contacts</a>
+                    </div>
                 </div>
-            </div>
-
-            <a href="careers.html" class="nav-item nav-link">Careers</a>
-            <a href="contact.html" class="nav-item nav-link active">Contacts</a>
-        </div>
-    </div>
-</nav>
+            </nav>
 
             <!-- Header Start -->
             <div class="container-fluid bg-breadcrumb">
@@ -118,7 +95,7 @@
             /* Scoped to .tc-light so the nav, header and footer are not affected.
                Colours are set explicitly below. */
             /* Palette taken from the page screenshot: green #00d084, light grey #f8f8f8, white #ffffff */
-            .tc-light { --tc-green: #00d084; --tc-grey: #f8f8f8; --tc-white: #ffffff; --tc-border: rgba(0, 208, 132, 0.35); --tc-heading: #111111; --tc-text: #6b6b6b; }
+            .tc-light { --tc-green: #FE2D2D; --tc-grey: #f8f8f8; --tc-white: #ffffff; --tc-border: #FE2D2D; --tc-heading: #111111; --tc-text: #6b6b6b; }
             .tc-light .tc-green { color: var(--tc-green); }
             .tc-light .tc-grey { background: var(--tc-grey); }
             .tc-light .tc-white { background: var(--tc-white); }
@@ -320,64 +297,46 @@
         <!-- Contact End -->
 
         <!-- Footer Start -->
-        <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
+          <!-- Footer Start -->
+      <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
             <div class="container py-5 border-start-0 border-end-0" style="border: 1px solid; border-color: rgb(255, 255, 255, 0.08);">
                 <div class="row g-5">
-                    <div class="col-md-6 col-lg-6 col-xl-4">
+                    <div class="col-md-6 col-lg-4">
                         <div class="footer-item">
-                                                   <a href="index.html" class="p-0">
-                                <img src="img/logo.png" alt="Stocker Logo" style="max-height: 50px;">
-                            </a>
-                            <p class="mb-4">Dolor amet sit justo amet elitr clita ipsum elitr est.Lorem ipsum dolor sit amet, consectetur adipiscing...</p>
-
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-2">
-                        <div class="footer-item">
-                            <h4 class="text-white mb-4">Quick Links</h4>
-                            <a href="#"><i class="fas fa-angle-right me-2"></i> About Us</a>
-                            <a href="#"><i class="fas fa-angle-right me-2"></i> Feature</a>
-                            <a href="#"><i class="fas fa-angle-right me-2"></i> Attractions</a>
-                            <a href="#"><i class="fas fa-angle-right me-2"></i> Tickets</a>
-                            <a href="#"><i class="fas fa-angle-right me-2"></i> Blog</a>
-                            <a href="#"><i class="fas fa-angle-right me-2"></i> Contact us</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item">
-                            <h4 class="text-white mb-4">Support</h4>
-                            <a href="#"><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
-                            <a href="#"><i class="fas fa-angle-right me-2"></i> Terms & Conditions</a>
-                            <a href="#"><i class="fas fa-angle-right me-2"></i> Disclaimer</a>
-                            <a href="#"><i class="fas fa-angle-right me-2"></i> Support</a>
-                            <a href="#"><i class="fas fa-angle-right me-2"></i> FAQ</a>
-                            <a href="#"><i class="fas fa-angle-right me-2"></i> Help</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item">
-                            <h4 class="text-white mb-4">Contact Info</h4>
-                            <div class="d-flex align-items-center">
-                                <i class="fas fa-map-marker-alt text-primary me-3"></i>
-                                <p class="text-white mb-0">123 Street New York.USA</p>
-                            </div>
+                            <h4 class="text-white mb-4">Contacts Us</h4>
                             <div class="d-flex align-items-center">
                                 <i class="fas fa-envelope text-primary me-3"></i>
-                                <p class="text-white mb-0">info@example.com</p>
+                                <a href="mailto:info@mphoti.co.za" class="text-white mb-0">info@mphoti.co.za</a>
                             </div>
                             <div class="d-flex align-items-center">
                                 <i class="fa fa-phone-alt text-primary me-3"></i>
-                                <p class="text-white mb-0">(+012) 3456 7890</p>
+                                <a href="tel:+27104491515" class="text-white mb-0">+27 (0) 10 449 1515</a>
                             </div>
-                            <div class="d-flex align-items-center mb-4">
-                                <i class="fab fa-firefox-browser text-primary me-3"></i>
-                                <p class="text-white mb-0">Yoursite@ex.com</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="footer-item">
+                            <h4 class="text-white mb-4">Mphoti Consulting</h4>
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-map-marker-alt text-primary me-3"></i>
+                                <p class="text-white mb-0">Johannesburg, Gauteng</p>
                             </div>
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-map-marker-alt text-primary me-3"></i>
+                                <p class="text-white mb-0">Nelspruit, Mpumalanga</p>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-map-marker-alt text-primary me-3"></i>
+                                <p class="text-white mb-0">Polokwane, Limpopo</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-4">
+                        <div class="footer-item">
+                            <h4 class="text-white mb-4">Connect with us</h4>
                             <div class="d-flex">
-                                <a class="btn btn-primary btn-sm-square rounded-circle me-3" href="#"><i class="fab fa-facebook-f text-white"></i></a>
-                                <a class="btn btn-primary btn-sm-square rounded-circle me-3" href="#"><i class="fab fa-twitter text-white"></i></a>
-                                <a class="btn btn-primary btn-sm-square rounded-circle me-3" href="#"><i class="fab fa-instagram text-white"></i></a>
-                                <a class="btn btn-primary btn-sm-square rounded-circle me-0" href="#"><i class="fab fa-linkedin-in text-white"></i></a>
+                                <a class="btn btn-primary btn-sm-square rounded-circle me-3" href="https://www.linkedin.com/company/mphoti-consulting/posts/?feedView=all" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in text-white"></i></a>
+                                <a class="btn btn-primary btn-sm-square rounded-circle me-0" href="https://www.youtube.com/@MphotiConsulting" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube text-white"></i></a>
                             </div>
                         </div>
                     </div>

@@ -866,7 +866,7 @@
 
 /*** Footer Start ***/
 .footer {
-    background: black;
+    background: #071426;
 }
 
 .footer .footer-item {
@@ -1271,3 +1271,5 @@
     .ab-cta { padding: 40px 25px; }
     .ab-cta h2 { font-size: 28px; }
 }
+
+
