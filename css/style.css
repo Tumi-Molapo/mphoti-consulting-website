@@ -1,4 +1,3 @@
-
 /*** Spinner Start ***/
 /*** Spinner ***/
 #spinner {
@@ -909,4 +908,366 @@
 }
 /*** copyright end ***/
 
+/* =========================================
+   ABOUT PAGE (custom layout, template green)
+   var(--bs-primary) = the template's green
+   ========================================= */
 
+/* ---------- Shared: small green pill above headings ---------- */
+.ab-eyebrow {
+    display: inline-block;
+    background: color-mix(in srgb, var(--bs-primary) 12%, white);
+    color: var(--bs-primary);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 30px;
+    margin-bottom: 16px;
+}
+
+/* ---------- Shared: section headings ---------- */
+.ab-title {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--bs-dark);
+    margin-bottom: 20px;
+}
+
+.ab-title span {
+    color: var(--bs-primary);
+}
+
+/* ---------- 1. Intro: photo collage ---------- */
+.ab-collage {
+    position: relative;
+    padding: 0 60px 60px 0;
+}
+
+.ab-img-main {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+.ab-img-small {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 55%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 16px;
+    border: 8px solid var(--bs-white);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.ab-exp {
+    position: absolute;
+    top: 30px;
+    left: -20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--bs-primary);
+    color: var(--bs-white);
+    padding: 18px 22px;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.ab-exp-num {
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.ab-exp-text {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.3;
+    text-transform: uppercase;
+}
+
+/* ---------- 1. Intro: checklist + buttons ---------- */
+.ab-checklist {
+    list-style: none;
+    padding: 0;
+    margin: 25px 0 35px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 20px;
+}
+
+.ab-checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-weight: 500;
+    color: var(--bs-dark);
+}
+
+.ab-checklist li i {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--bs-primary);
+    color: var(--bs-white);
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+}
+
+.ab-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 25px;
+}
+
+.ab-link {
+    font-weight: 600;
+    color: var(--bs-dark);
+    transition: 0.3s;
+}
+
+.ab-link i {
+    margin-left: 6px;
+    transition: 0.3s;
+}
+
+.ab-link:hover {
+    color: var(--bs-primary);
+}
+
+.ab-link:hover i {
+    margin-left: 12px;
+}
+
+/* ---------- 2. Stat cards ---------- */
+.ab-stats {
+    background: var(--bs-light);
+}
+
+.ab-stat-card {
+    background: var(--bs-white);
+    border-radius: 16px;
+    border-bottom: 4px solid var(--bs-primary);
+    padding: 35px 25px;
+    text-align: center;
+    height: 100%;
+    transition: 0.4s;
+}
+
+.ab-stat-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.ab-stat-card i {
+    font-size: 30px;
+    color: var(--bs-primary);
+    margin-bottom: 15px;
+}
+
+.ab-stat-num {
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--bs-dark);
+    margin-bottom: 8px;
+}
+
+.ab-stat-num span:last-child {
+    color: var(--bs-primary);
+}
+
+.ab-stat-label {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 14px;
+    margin: 0;
+}
+
+/* ---------- 3. Mission / Expertise / Partnerships cards ---------- */
+.ab-pillar {
+    position: relative;
+    background: var(--bs-white);
+    border: 1px solid #eaeaea;
+    border-radius: 16px;
+    padding: 40px 30px;
+    height: 100%;
+    overflow: hidden;
+    transition: 0.4s;
+}
+
+.ab-pillar:hover {
+    border-color: var(--bs-primary);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.ab-pillar-num {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 64px;
+    font-weight: 800;
+    line-height: 1;
+    color: color-mix(in srgb, var(--bs-primary) 12%, white);
+}
+
+.ab-pillar-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--bs-primary) 12%, white);
+    color: var(--bs-primary);
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    transition: 0.4s;
+}
+
+.ab-pillar:hover .ab-pillar-icon {
+    background: var(--bs-primary);
+    color: var(--bs-white);
+}
+
+.ab-pillar h4 {
+    margin-bottom: 15px;
+}
+
+.ab-pillar p {
+    margin: 0;
+}
+
+/* ---------- 4. Expertise tiles (whole tile is a link) ---------- */
+.ab-expertise {
+    background: var(--bs-light);
+}
+
+.ab-tile {
+    display: block;
+    background: var(--bs-white);
+    border-radius: 16px;
+    padding: 35px 28px;
+    height: 100%;
+    color: inherit;
+    transition: 0.4s;
+}
+
+.ab-tile-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    background: var(--bs-primary);
+    color: var(--bs-white);
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 22px;
+    transition: 0.4s;
+}
+
+.ab-tile h5 {
+    color: var(--bs-dark);
+    margin-bottom: 12px;
+    transition: 0.4s;
+}
+
+.ab-tile p {
+    margin-bottom: 18px;
+    transition: 0.4s;
+}
+
+.ab-tile-more {
+    font-weight: 600;
+    color: var(--bs-primary);
+    transition: 0.4s;
+}
+
+.ab-tile:hover {
+    background: var(--bs-primary);
+    transform: translateY(-8px);
+}
+
+.ab-tile:hover .ab-tile-icon {
+    background: var(--bs-white);
+    color: var(--bs-primary);
+}
+
+.ab-tile:hover h5,
+.ab-tile:hover p,
+.ab-tile:hover .ab-tile-more {
+    color: var(--bs-white);
+}
+
+/* ---------- 5. Green call-to-action banner ---------- */
+.ab-cta {
+    background: linear-gradient(135deg, var(--bs-primary), color-mix(in srgb, var(--bs-primary) 65%, black));
+    border-radius: 20px;
+    padding: 60px 50px;
+    color: var(--bs-white);
+}
+
+.ab-cta h2 {
+    color: var(--bs-white);
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.ab-cta p {
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0;
+}
+
+.ab-cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: flex-end;
+}
+
+.ab-btn-outline {
+    border: 2px solid var(--bs-white);
+    color: var(--bs-white);
+    font-weight: 600;
+    transition: 0.4s;
+}
+
+.ab-btn-outline:hover {
+    background: var(--bs-white);
+    color: var(--bs-primary);
+}
+
+/* ---------- Tablets & phones ---------- */
+@media (max-width: 991px) {
+    .ab-cta-actions {
+        justify-content: flex-start;
+        margin-top: 25px;
+    }
+}
+
+@media (max-width: 767px) {
+    .ab-title { font-size: 30px; }
+    .ab-collage { padding: 0 25px 40px 0; }
+    .ab-img-main { height: 340px; }
+    .ab-img-small { height: 150px; border-width: 5px; }
+    .ab-exp { left: 10px; top: 15px; padding: 12px 16px; }
+    .ab-exp-num { font-size: 30px; }
+    .ab-checklist { grid-template-columns: 1fr; }
+    .ab-cta { padding: 40px 25px; }
+    .ab-cta h2 { font-size: 28px; }
+}
