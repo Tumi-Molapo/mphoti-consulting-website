@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Stocker - Stock Market Website Template</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet"> 
+
+        <!-- Icon Font Stylesheet -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- Libraries Stylesheet -->
+        <link rel="stylesheet" href="lib/animate/animate.min.css"/>
+        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+
+        <!-- Professional layout -->
+        <style>
+            .section-label {
+                font-size: 0.8rem;
+                font-weight: 700;
+                letter-spacing: 0.12em;
+                text-transform: uppercase;
+            }
+            .pro-img {
+                width: 100%;
+                height: 390px;   /* was 240-280px, try 350-450px */
+                object-fit: cover;
+                display: block;
+                border-radius: 14px;
+                box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+            }
+            .pro-card {
+                height: 100%;
+                background: #fff;
+                border: 1px solid rgba(0, 0, 0, 0.08);
+                border-top: 3px solid var(--bs-primary, #0d6efd);
+                border-radius: 10px;
+                padding: 1.4rem 1.4rem 1.2rem;
+                transition: transform .25s ease, box-shadow .25s ease;
+            }
+            .pro-card:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+            }
+            .pro-card .pro-icon {
+                width: 48px;
+                height: 48px;
+                border-radius: 10px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                background: rgba(0, 0, 0, 0.05);
+                margin-bottom: 0.9rem;
+            }
+            .pro-card h5 { font-size: 1.08rem; margin: 0 0 0.4rem; }
+            .pro-card p { font-size: 0.9rem; line-height: 1.5; margin: 0 0 0.6rem; }
+            .pro-card ul { font-size: 0.87rem; margin: 0; }
+            .pro-card li { margin-bottom: 0.25rem; }
+            .why-band {
+                border-radius: 14px;
+                background: rgba(0, 0, 0, 0.04);
+                padding: 1.5rem 1.75rem;
+            }
+            .why-item { display: flex; align-items: flex-start; }
+            .why-item i { width: 2.4rem; text-align: center; margin-top: 0.15rem; }
+            .why-item h6 { margin: 0; font-weight: 700; }
+            .why-item p { margin: 0; font-size: 0.88rem; line-height: 1.4; }
+            .contact-panel {
+                border-radius: 14px;
+                overflow: hidden;
+                border: 1px solid rgba(0, 0, 0, 0.08);
+                background: #fff;
+            }
+            .contact-panel .panel-img {
+                width: 100%;
+                height: 100%;
+                min-height: 220px;
+                object-fit: cover;
+                display: block;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-fluid position-relative p-0">
+            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+    <a href="index.html" class="navbar-brand p-0">
+        <h1 class="text-primary"><i class="fas fa-search-dollar me-3"></i>Stocker</h1>
+        <!-- <img src="img/logo.png" alt="Logo"> -->
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="fa fa-bars"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto py-0">
+            <a href="index.html" class="nav-item nav-link">Home</a>
+            <a href="about.html" class="nav-item nav-link">About Us</a>
+
+            <div class="nav-item dropdown" id="servicesDropdown">
+                <!-- Plain link: always goes to service.html -->
+                <a href="service.html" class="nav-link active">Services <i class="fas fa-angle-down ms-1 d-none d-lg-inline"></i></a>
+
+                <!-- Arrow for phones/tablets only: opens the sub-menu without leaving the page -->
+                <a href="#" class="nav-link dropdown-toggle d-lg-none" data-bs-toggle="dropdown" aria-label="Show service pages">More services</a>
+
+                <div class="dropdown-menu m-0">
+                    <a href="artificial.html" class="dropdown-item">Artificial Intelligence</a>
+                    <a href="infrastructure.html" class="dropdown-item active">IT Infrastructure Solutions</a>
+                    <a href="security.html" class="dropdown-item">Cyber Security</a>
+                </div>
+            </div>
+
+            <a href="careers.html" class="nav-item nav-link">Careers</a>
+            <a href="contact.html" class="nav-item nav-link">Contacts</a>
+        </div>
+    </div>
+</nav>
+
+            <!-- Header Start (short) -->
+            <div class="container-fluid bg-breadcrumb">
+                <div class="container text-center py-3" style="max-width: 900px;">
+                    <h4 class="text-white display-6 mb-2 wow fadeInDown" data-wow-delay="0.1s">IT Infrastructure Solutions</h4>
+                    <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item"><a href="service.html">Services</a></li>
+                        <li class="breadcrumb-item active text-primary">IT Infrastructure Solutions</li>
+                    </ol>    
+                </div>
+            </div>
+            <!-- Header End -->
+        </div>
+        <!-- Navbar & Hero End -->
+
+
+        <!-- Intro Start (picture 1, now on the right) -->
+        <div class="container-fluid about pt-5 pb-4">
+            <div class="container">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-7 order-2 order-lg-1 wow fadeInLeft" data-wow-delay="0.2s">
+                        <div class="section-label text-primary mb-2">Powering South African businesses with</div>
+                        <h1 class="display-6 mb-3">Reliable, Scalable Infrastructure</h1>
+                        <p class="mb-3">From structured cabling and electrical installations to boardrooms and CCTV, we build the foundation that keeps your business connected, secure and running, whether you're setting up, upgrading or expanding.</p>
+                        <a href="contact.html" class="btn btn-primary rounded-pill py-2 px-5">Get In Touch</a>
+                    </div>
+                    <div class="col-lg-5 order-1 order-lg-2 wow fadeInRight" data-wow-delay="0.2s">
+                        <img src="img/sev-2.jpg" class="pro-img" alt="IT Infrastructure Solutions">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Intro End -->
+
+
+        <!-- Our Services Start -->
+        <div class="container-fluid service pb-4">
+            <div class="container">
+                <div class="text-center mb-4 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="section-label text-primary mb-1">Our services</div>
+                    <h2 class="mb-0">Everything your office needs to run</h2>
+                </div>
+                <div class="row g-4 justify-content-center">
+
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="pro-card">
+                            <div class="pro-icon"><i class="fas fa-network-wired fa-lg text-primary"></i></div>
+                            <h5>Network Cabling &amp; Connectivity</h5>
+                            <p>Structured cabling built for high-speed, scalable connectivity.</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-primary me-2"></i>CAT6 / CAT6a / Fibre</li>
+                                <li><i class="fas fa-check text-primary me-2"></i>Server room and rack setup</li>
+                                <li><i class="fas fa-check text-primary me-2"></i>Troubleshooting and upgrades</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="pro-card">
+                            <div class="pro-icon"><i class="fas fa-bolt fa-lg text-primary"></i></div>
+                            <h5>Electrical &amp; Office Power</h5>
+                            <p>Safe, compliant electrical services for commercial spaces.</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-primary me-2"></i>Wiring and DB board upgrades</li>
+                                <li><i class="fas fa-check text-primary me-2"></i>UPS and inverter-ready backup</li>
+                                <li><i class="fas fa-check text-primary me-2"></i>LED lighting, SA-compliant</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="pro-card">
+                            <div class="pro-icon"><i class="fas fa-video fa-lg text-primary"></i></div>
+                            <h5>Boardroom &amp; Smart Office</h5>
+                            <p>Modern, collaborative meeting spaces.</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-primary me-2"></i>Displays and audio systems</li>
+                                <li><i class="fas fa-check text-primary me-2"></i>Zoom, Teams and Meet rooms</li>
+                                <li><i class="fas fa-check text-primary me-2"></i>Wireless presentation and automation</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="pro-card">
+                            <div class="pro-icon"><i class="fas fa-shield-alt fa-lg text-primary"></i></div>
+                            <h5>CCTV &amp; Security Systems</h5>
+                            <p>Intelligent surveillance for South African environments.</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-primary me-2"></i>HD and IP cameras</li>
+                                <li><i class="fas fa-check text-primary me-2"></i>Remote mobile and desktop monitoring</li>
+                                <li><i class="fas fa-check text-primary me-2"></i>Access control and alerts</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="pro-card">
+                            <div class="pro-icon"><i class="fas fa-building fa-lg text-primary"></i></div>
+                            <h5>Office Setup &amp; Rollout</h5>
+                            <p>Full office setups so your team is ready from day one.</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-primary me-2"></i>Planning and implementation</li>
+                                <li><i class="fas fa-check text-primary me-2"></i>Desk, network and power allocation</li>
+                                <li><i class="fas fa-check text-primary me-2"></i>Relocations and upgrades</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- Our Services End -->
+
+
+        <!-- Why Choose Start -->
+        <div class="container-fluid feature pb-4">
+            <div class="container">
+                <div class="why-band wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="row g-4 align-items-center">
+                        <div class="col-lg-4">
+                            <div class="section-label text-primary mb-1">Why choose Mphoti Consulting?</div>
+                            <p class="mb-0 small">Designed for South African realities, from load shedding to infrastructure constraints, for SMEs and enterprises alike.</p>
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <div class="why-item">
+                                        <i class="fas fa-layer-group fa-2x text-primary"></i>
+                                        <div><h6>Reliable &amp; Scalable</h6><p>Built to grow with minimal downtime.</p></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="why-item">
+                                        <i class="fas fa-lock fa-2x text-primary"></i>
+                                        <div><h6>Security-Focused</h6><p>From network design to CCTV.</p></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="why-item">
+                                        <i class="fas fa-tasks fa-2x text-primary"></i>
+                                        <div><h6>End-to-End Service</h6><p>One vendor from planning to support.</p></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Why Choose End -->
+
+
+        <!-- Get In Touch Start (picture 2) -->
+        <div class="container-fluid pb-5">
+            <div class="container">
+                <div class="contact-panel wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="row g-0 align-items-stretch">
+                        <div class="col-lg-7 p-4 p-lg-5 d-flex flex-column justify-content-center">
+                            <div class="section-label text-primary mb-2">Future-proof your infrastructure today</div>
+                            <h2 class="mb-2">Let's have a chat.</h2>
+                            <p class="mb-3">Practical, compliant and cost-effective infrastructure that supports productivity, protects your assets and enables growth.</p>
+                            <div><a class="btn btn-primary rounded-pill py-2 px-5" href="contact.html">Get In Touch</a></div>
+                        </div>
+                        <div class="col-lg-5">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Get In Touch End -->
+
+        <!-- Footer Start -->
+        <div class="container-fluid footer py-4 wow fadeIn" data-wow-delay="0.2s">
+            <div class="container py-4 border-start-0 border-end-0" style="border: 1px solid; border-color: rgb(255, 255, 255, 0.08);">
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-6 col-xl-4">
+                        <div class="footer-item">
+                            <a href="index.html" class="p-0">
+                                <h4 class="text-white"><i class="fas fa-search-dollar me-3"></i>Stocker</h4>
+                                <!-- <img src="img/logo.png" alt="Logo"> -->
+                            </a>
+                            <p class="mb-4">Dolor amet sit justo amet elitr clita ipsum elitr est.Lorem ipsum dolor sit amet, consectetur adipiscing...</p>
+                       
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-2">
+                        <div class="footer-item">
+                            <h4 class="text-white mb-4">Quick Links</h4>
+                            <a href="#"><i class="fas fa-angle-right me-2"></i> About Us</a>
+                            <a href="#"><i class="fas fa-angle-right me-2"></i> Feature</a>
+                            <a href="#"><i class="fas fa-angle-right me-2"></i> Attractions</a>
+                            <a href="#"><i class="fas fa-angle-right me-2"></i> Tickets</a>
+                            <a href="#"><i class="fas fa-angle-right me-2"></i> Blog</a>
+                            <a href="#"><i class="fas fa-angle-right me-2"></i> Contact us</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item">
+                            <h4 class="text-white mb-4">Support</h4>
+                            <a href="#"><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
+                            <a href="#"><i class="fas fa-angle-right me-2"></i> Terms & Conditions</a>
+                            <a href="#"><i class="fas fa-angle-right me-2"></i> Disclaimer</a>
+                            <a href="#"><i class="fas fa-angle-right me-2"></i> Support</a>
+                            <a href="#"><i class="fas fa-angle-right me-2"></i> FAQ</a>
+                            <a href="#"><i class="fas fa-angle-right me-2"></i> Help</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item">
+                            <h4 class="text-white mb-4">Contact Info</h4>
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-map-marker-alt text-primary me-3"></i>
+                                <p class="text-white mb-0">123 Street New York.USA</p>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-envelope text-primary me-3"></i>
+                                <p class="text-white mb-0">info@example.com</p>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <i class="fa fa-phone-alt text-primary me-3"></i>
+                                <p class="text-white mb-0">(+012) 3456 7890</p>
+                            </div>
+                            <div class="d-flex align-items-center mb-4">
+                                <i class="fab fa-firefox-browser text-primary me-3"></i>
+                                <p class="text-white mb-0">Yoursite@ex.com</p>
+                            </div>
+                            <div class="d-flex">
+                                <a class="btn btn-primary btn-sm-square rounded-circle me-3" href="#"><i class="fab fa-facebook-f text-white"></i></a>
+                                <a class="btn btn-primary btn-sm-square rounded-circle me-3" href="#"><i class="fab fa-twitter text-white"></i></a>
+                                <a class="btn btn-primary btn-sm-square rounded-circle me-3" href="#"><i class="fab fa-instagram text-white"></i></a>
+                                <a class="btn btn-primary btn-sm-square rounded-circle me-0" href="#"><i class="fab fa-linkedin-in text-white"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+        
+
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-primary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>   
+
+        
+        <!-- JavaScript Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/counterup/counterup.min.js"></script>
+        <script src="lib/lightbox/js/lightbox.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+
+        <!-- Services dropdown: open on hover (desktop only); clicking "Services" still goes to service.html -->
+        <script>
+            (function () {
+                var dd = document.getElementById('servicesDropdown');
+                if (!dd) return;
+                var menu = dd.querySelector('.dropdown-menu');
+                dd.addEventListener('mouseenter', function () {
+                    if (window.innerWidth >= 992) menu.classList.add('show');
+                });
+                dd.addEventListener('mouseleave', function () {
+                    menu.classList.remove('show');
+                });
+            })();
+        </script>
+    </body>
+
+</html>
