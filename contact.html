@@ -113,121 +113,210 @@
         </div>
         <!-- Navbar & Hero End -->
 
-        <!-- Contact Start -->
-        <div class="container-fluid contact py-5">
-            <div class="container py-5">
-                <div class="row g-5">
-                    <div class="col-xl-6">
-                        <div class="wow fadeInUp" data-wow-delay="0.2s">
-                            <div class="bg-light rounded p-5 mb-5">
-                                <h4 class="text-primary mb-4">Get in Touch</h4>
-                                <div class="row g-4">
-                                    <div class="col-md-6">
-                                        <div class="contact-add-item">
-                                            <div class="contact-icon text-primary mb-4">
-                                                <i class="fas fa-map-marker-alt fa-2x"></i>
-                                            </div>
-                                            <div>
-                                                <h4>Address</h4>
-                                                <p class="mb-0">123 Street New York.USA</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="contact-add-item">
-                                            <div class="contact-icon text-primary mb-4">
-                                                <i class="fas fa-envelope fa-2x"></i>
-                                            </div>
-                                            <div>
-                                                <h4>Mail Us</h4>
-                                                <p class="mb-0">info@example.com</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="contact-add-item">
-                                            <div class="contact-icon text-primary mb-4">
-                                                <i class="fa fa-phone-alt fa-2x"></i>
-                                            </div>
-                                            <div>
-                                                <h4>Telephone</h4>
-                                                <p class="mb-0">(+012) 3456 7890</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="contact-add-item">
-                                            <div class="contact-icon text-primary mb-4">
-                                                <i class="fab fa-firefox-browser fa-2x"></i>
-                                            </div>
-                                            <div>
-                                                <h4>Yoursite@ex.com</h4>
-                                                <p class="mb-0">(+012) 3456 7890</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="bg-light p-5 rounded h-100 wow fadeInUp" data-wow-delay="0.2s">
-                                <h4 class="text-primary">Send Your Message</h4>
-                                <p class="mb-4">The contact form is currently inactive. Get a functional and working contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <a class="text-primary fw-bold" href="https://htmlcodex.com/contact-form">Download Now</a>.</p>
-                                <form>
-                                    <div class="row g-4">
-                                        <div class="col-lg-12 col-xl-6">
-                                            <div class="form-floating">
-                                                <input type="text" class="form-control border-0" id="name" placeholder="Your Name">
-                                                <label for="name">Your Name</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12 col-xl-6">
-                                            <div class="form-floating">
-                                                <input type="email" class="form-control border-0" id="email" placeholder="Your Email">
-                                                <label for="email">Your Email</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12 col-xl-6">
-                                            <div class="form-floating">
-                                                <input type="phone" class="form-control border-0" id="phone" placeholder="Phone">
-                                                <label for="phone">Your Phone</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12 col-xl-6">
-                                            <div class="form-floating">
-                                                <input type="text" class="form-control border-0" id="project" placeholder="Project">
-                                                <label for="project">Your Project</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="form-floating">
-                                                <input type="text" class="form-control border-0" id="subject" placeholder="Subject">
-                                                <label for="subject">Subject</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="form-floating">
-                                                <textarea class="form-control border-0" placeholder="Leave a message here" id="message" style="height: 160px"></textarea>
-                                                <label for="message">Message</label>
-                                            </div>
+<!-- Contact Start -->
+        <style>
+            /* Scoped to .tc-light so the nav, header and footer are not affected.
+               Colours are set explicitly below. */
+            /* Palette taken from the page screenshot: green #00d084, light grey #f8f8f8, white #ffffff */
+            .tc-light { --tc-green: #00d084; --tc-grey: #f8f8f8; --tc-white: #ffffff; --tc-border: rgba(0, 208, 132, 0.35); --tc-heading: #111111; --tc-text: #6b6b6b; }
+            .tc-light .tc-green { color: var(--tc-green); }
+            .tc-light .tc-grey { background: var(--tc-grey); }
+            .tc-light .tc-white { background: var(--tc-white); }
+            .tc-light h1, .tc-light h2, .tc-light h3, .tc-light label { color: var(--tc-heading); }
+            .tc-light p, .tc-light .tc-meta { color: var(--tc-text); }
+            .tc-light .tc-green svg { stroke: var(--tc-green); }
+            .tc-light .tc-icon, .tc-light .tc-card-icon { border: 1px solid var(--tc-border); }
+            .tc-light .tc-button { width: 100%; margin-top: 1rem; background: var(--tc-green); color: var(--tc-white); border: 0; border-radius: 8px; padding: 0.9rem 1rem; font-size: 1rem; font-weight: 700; cursor: pointer; }
+            .tc-light .tc-button:hover { opacity: 0.9; }
+            .tc-light { padding: 5rem 0; }
+            .tc-light .tc-container { max-width: 1140px; margin: 0 auto; padding: 0 1.5rem; }
+            .tc-light .tc-subtitle { display: block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+            .tc-light h1, .tc-light h2 { font-weight: 800; font-size: 3rem; line-height: 1.15; margin: 1.5rem 0; }
+            .tc-light .tc-lead { line-height: 2; font-size: 0.9rem; margin-bottom: 2.5rem; }
+            .tc-light .tc-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: start; }
+            .tc-light .tc-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+            .tc-light .tc-item { display: flex; align-items: flex-start; margin-bottom: 1.5rem; }
+            .tc-light .tc-icon { width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-right: 1rem; }
+            .tc-light .tc-item h3 { font-size: 0.9rem; font-weight: 700; margin: 0 0 0.25rem; }
+            .tc-light .tc-item p { font-size: 0.9rem; margin: 0; line-height: 1.6; }
+            .tc-light .tc-form-card { border-radius: 24px; padding: 2.5rem; border: 1px solid var(--tc-border); }
+            .tc-light label { display: block; font-weight: 600; font-size: 0.85rem; margin-bottom: 0.5rem; }
+            .tc-light .tc-field { margin-bottom: 1.5rem; }
+            .tc-light .tc-input { width: 100%; background: var(--tc-white); color: var(--tc-heading); border: 1px solid var(--tc-border); border-radius: 12px; padding: 0.7rem 1rem; font-size: 0.85rem; outline: none; }
+            .tc-light .tc-input::placeholder { color: #9a9ea6; }
+            .tc-light .tc-input:focus { border-color: var(--tc-green); }
+            .tc-light textarea.tc-input { resize: none; }
+            .tc-light .tc-offices { text-align: center; padding-top: 6rem; margin-bottom: 3.5rem; }
+            .tc-light .tc-offices p { max-width: 640px; margin: 0 auto; font-size: 0.9rem; }
+            .tc-light .tc-card { border: 1px solid var(--tc-border); border-radius: 16px; padding: 2rem; height: 100%; }
+            .tc-light .tc-card-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; }
+            .tc-light .tc-card h3 { font-size: 1.1rem; font-weight: 700; margin: 0 0 0.25rem; }
+            .tc-light .tc-card .tc-tag { font-size: 0.8rem; font-weight: 700; margin: 0 0 0.75rem; }
+            .tc-light .tc-card .tc-text { font-size: 0.85rem; line-height: 1.8; margin: 0 0 1rem; }
+            .tc-light .tc-card .tc-meta { display: flex; align-items: center; font-size: 0.85rem; }
+            .tc-light .tc-card .tc-meta svg { margin-right: 0.5rem; flex-shrink: 0; }
+            /* Links and hover effects */
+            .tc-light a.tc-link { color: inherit; text-decoration: none; cursor: pointer; }
+            .tc-light a.tc-item { transition: transform 0.2s ease; }
+            .tc-light a.tc-card { display: block; transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; }
+            .tc-light .tc-link .tc-icon, .tc-light .tc-link .tc-card-icon { transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease; }
+            .tc-light .tc-link h3, .tc-light .tc-link p { transition: color 0.2s ease; }
+            .tc-light a.tc-item:hover, .tc-light a.tc-item:focus-visible { transform: translateX(4px); }
+            .tc-light a.tc-card:hover, .tc-light a.tc-card:focus-visible { transform: translateY(-4px); border-color: var(--tc-green); box-shadow: 0 10px 24px rgba(0, 208, 132, 0.18); }
+            .tc-light .tc-link:hover .tc-icon, .tc-light .tc-link:focus-visible .tc-icon,
+            .tc-light .tc-link:hover .tc-card-icon, .tc-light .tc-link:focus-visible .tc-card-icon { background: var(--tc-green); color: var(--tc-white); border-color: var(--tc-green); }
+            .tc-light .tc-link:hover h3, .tc-light .tc-link:focus-visible h3,
+            .tc-light .tc-link:hover p.tc-text, .tc-light .tc-link:hover .tc-item p, .tc-light a.tc-item:hover p { color: var(--tc-green); }
+            .tc-light .tc-link:focus-visible { outline: 2px solid var(--tc-green); outline-offset: 4px; border-radius: 12px; }
+            /* Socials */
+            .tc-light .tc-socials { display: flex; align-items: center; margin-top: 2.5rem; }
+            .tc-light .tc-socials-label { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--tc-text); margin-right: 1rem; }
+            .tc-light a.tc-social { width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-right: 0.75rem; background: var(--tc-grey); border: 1px solid var(--tc-border); color: var(--tc-heading); text-decoration: none; transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease; }
+            .tc-light a.tc-social:hover, .tc-light a.tc-social:focus-visible { background: var(--tc-green); border-color: var(--tc-green); color: var(--tc-white); transform: translateY(-3px); outline: none; }
+            @media (max-width: 767.98px) {
+                .tc-light { padding-top: 3rem; }
+                .tc-light h1, .tc-light h2 { font-size: 2.25rem; }
+                .tc-light .tc-grid-2 { grid-template-columns: 1fr; gap: 3rem; }
+                .tc-light .tc-grid-3 { grid-template-columns: 1fr; }
+                .tc-light .tc-form-card { padding: 1.5rem; }
+            }
+        </style>
 
-                                        </div>
-                                        <div class="col-12">
-                                            <button class="btn btn-primary w-100 py-3">Send Message</button>
-                                        </div>
-                                    </div>
-                                </form>
+        <div class="container-fluid tc-light">
+            <div class="tc-container">
+
+                <!-- Contact Us -->
+                <div class="tc-grid-2 wow fadeInUp" data-wow-delay="0.2s">
+
+                    <!-- Left -->
+                    <div>
+                        <span class="tc-subtitle tc-green">Contact Us</span>
+                        <h1>Get in touch</h1>
+                        <p class="tc-lead">
+                            Have a question or want to learn more about our services? Fill out the form and our team will get back to you within 24 hours.
+                        </p>
+
+                        <a class="tc-item tc-link" href="mailto:info@mphoti.co.za" aria-label="Send an email to info@mphoti.co.za">
+                            <div class="tc-icon tc-grey tc-green">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 8L10.89 13.26C11.2187 13.4793 11.6049 13.5963 12 13.5963C12.3951 13.5963 12.7813 13.4793 13.11 13.26L21 8M5 19H19C19.5304 19 20.0391 18.7893 20.4142 18.4142C20.7893 18.0391 21 17.5304 21 17V7C21 6.46957 20.7893 5.96086 20.4142 5.58579C20.0391 5.21071 19.5304 5 19 5H5C4.46957 5 3.96086 5.21071 3.58579 5.58579C3.21071 5.96086 3 6.46957 3 7V17C3 17.5304 3.21071 18.0391 3.58579 18.4142C3.96086 18.7893 4.46957 19 5 19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
                             </div>
+                            <div>
+                                <h3>Email</h3>
+                                <p>info@mphoti.co.za</p>
+                            </div>
+                        </a>
+
+                        <a class="tc-item tc-link" href="https://www.google.com/maps/search/?api=1&query=Johannesburg%20Offices%2C%20Ground%20Floor%2C%20N-1%2C%20Block%20D%2C%20Dunkeld%20West%2C%206%20North%20Road%2C%20Dunkeld%20West%2C%20Johannesburg%2C%20Gauteng%2C%202196%2C%20South%20Africa" target="_blank" rel="noopener" aria-label="Open Johannesburg office in Google Maps">
+                            <div class="tc-icon tc-grey tc-green">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                            </div>
+                            <div>
+                                <h3>Office</h3>
+                                <p>Johannesburg Offices<br>Ground Floor, N-1, Block D, Dunkeld West, 6 North Road, Dunkeld West, Johannesburg, Gauteng, 2196, South Africa</p>
+                            </div>
+                        </a>
+
+                        <a class="tc-item tc-link" href="tel:+27104491515" aria-label="Call +27 10 449 1515">
+                            <div class="tc-icon tc-grey tc-green">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 16.92V19.92C22.0011 20.1985 21.9441 20.4742 21.8325 20.7294C21.7209 20.9845 21.5573 21.2136 21.3521 21.4019C21.1469 21.5901 20.9046 21.7335 20.6408 21.8227C20.3769 21.9119 20.0974 21.9451 19.82 21.92C16.7428 21.5856 13.787 20.5342 11.19 18.85C8.77383 17.3147 6.72534 15.2662 5.19 12.85C3.49998 10.2412 2.44824 7.271 2.12 4.18C2.09501 3.90347 2.12788 3.62476 2.2165 3.36162C2.30513 3.09849 2.44757 2.85669 2.63477 2.65162C2.82196 2.44655 3.04981 2.28271 3.30379 2.17052C3.55778 2.05833 3.83234 2.00026 4.11 2H7.11C7.59531 1.99523 8.06579 2.16708 8.43376 2.48353C8.80173 2.79999 9.04208 3.23945 9.11 3.72C9.23662 4.68007 9.47145 5.62273 9.81 6.53C9.94455 6.88792 9.97366 7.27691 9.89391 7.65088C9.81415 8.02485 9.62886 8.36811 9.36 8.64L8.09 9.91C9.51356 12.4136 11.5864 14.4864 14.09 15.91L15.36 14.64C15.6319 14.3711 15.9752 14.1858 16.3491 14.1061C16.7231 14.0263 17.1121 14.0555 17.47 14.19C18.3773 14.5286 19.3199 14.7634 20.28 14.89C20.7658 14.9585 21.2094 15.2032 21.5265 15.5775C21.8437 15.9518 22.0122 16.4296 22 16.92Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                            </div>
+                            <div>
+                                <h3>Phone</h3>
+                                <p>+27 [0] 10 449 1515</p>
+                            </div>
+                        </a>
+
+                        <!-- Socials: replace the two href values below with your real page links -->
+                        <div class="tc-socials">
+                            <span class="tc-socials-label">In socials:</span>
+                            <a class="tc-social" href="https://www.linkedin.com/search/results/companies/?keywords=Mphoti%20Consulting" target="_blank" rel="noopener" aria-label="Mphoti on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="tc-social" href="https://www.youtube.com/results?search_query=Mphoti+Consulting" target="_blank" rel="noopener" aria-label="Mphoti on YouTube"><i class="fab fa-youtube"></i></a>
                         </div>
                     </div>
-                    <div class="col-xl-6 wow fadeInRight" data-wow-delay="0.2s">
-                        <div class="rounded h-100">
-                            <iframe class="rounded h-100 w-100" 
-                            style="height: 400px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387191.33750346623!2d-73.97968099999999!3d40.6974881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sbd!4v1694259649153!5m2!1sen!2sbd" 
-                            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                    <!-- Right: form card -->
+                    <div>
+                        <div class="tc-form-card tc-grey" id="contact-wrapper">
+                            <form id="contact-form" action="thank-you.html" method="get">
+                                <div class="tc-field">
+                                    <label for="name">Full Name</label>
+                                    <input type="text" id="name" name="name" class="tc-input" placeholder="John Doe" required autocomplete="off">
+                                </div>
+                                <div class="tc-field">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" name="email" class="tc-input" placeholder="john@example.com" required>
+                                </div>
+                                <div class="tc-field">
+                                    <label for="subject">Subject</label>
+                                    <input type="text" id="subject" name="subject" class="tc-input" placeholder="How can we help?" required autocomplete="off">
+                                </div>
+                                <div class="tc-field">
+                                    <label for="message">Message</label>
+                                    <textarea id="message" name="message" rows="5" class="tc-input" placeholder="Tell us about your project..." required autocomplete="off"></textarea>
+                                </div>
+                                <button type="submit" class="tc-button">Send Message</button>
+                            </form>
                         </div>
                     </div>
                 </div>
+
+                <!-- Our Offices -->
+                <div class="tc-offices wow fadeInUp" data-wow-delay="0.2s">
+                    <span class="tc-subtitle tc-green">Our Offices</span>
+                    <h2>Find us across South Africa </h2>
+                    <p>Visit one of our offices or connect with a local team member.</p>
+                </div>
+
+                <div class="tc-grid-3 wow fadeInUp" data-wow-delay="0.2s">
+                    <div>
+                        <a class="tc-card tc-grey tc-link" href="https://www.google.com/maps/search/?api=1&query=Johannesburg%20Offices%2C%20Ground%20Floor%2C%20N-1%2C%20Block%20D%2C%20Dunkeld%20West%2C%206%20North%20Road%2C%20Dunkeld%20West%2C%20Johannesburg%2C%20Gauteng%2C%202196%2C%20South%20Africa" target="_blank" rel="noopener" aria-label="Open Johannesburg Offices in Google Maps">
+                            <div class="tc-card-icon tc-white tc-green">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                            </div>
+                            <h3>Johannesburg Offices</h3>
+                            <p class="tc-tag tc-green">Headquarters</p>
+                            <p class="tc-text">Ground Floor, N-1, Block D, Dunkeld West, 6 North Road, Dunkeld West, Johannesburg, Gauteng, 2196, South Africa</p>
+                            <div class="tc-meta">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"></circle><path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
+                                Mon–Fri, 8am–4pm SAST
+                            </div>
+                        </a>
+                    </div>
+
+                    <div>
+                        <a class="tc-card tc-grey tc-link" href="https://www.google.com/maps/search/?api=1&query=Nelspruit%20Offices%2C%2011%20Van%20Der%20Merwe%20Street%20Nelspruit%2C%201200%2C%20Mpumalanga%2C%20South%20Africa" target="_blank" rel="noopener" aria-label="Open Nelspruit Offices in Google Maps">
+                            <div class="tc-card-icon tc-white tc-green">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                            </div>
+                            <h3>Nelspruit Offices</h3>
+                            <p class="tc-tag tc-green">Mpumalanga</p>
+                            <p class="tc-text">11 Van Der Merwe Street Nelspruit, 1200, Mpumalanga, South Africa</p>
+                            <div class="tc-meta">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"></circle><path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
+                                Mon–Fri, 8am–4pm SAST
+                            </div>
+                        </a>
+                    </div>
+
+                    <div>
+                        <a class="tc-card tc-grey tc-link" href="https://www.google.com/maps/search/?api=1&query=Polokwane%20Offices%2C%203rd%20Floor%2C%2058-60%20Landdros%20Mare%20St%2C%20Thabakgolo%2C%20Polokwane%2C%20South%20Africa" target="_blank" rel="noopener" aria-label="Open Polokwane Offices in Google Maps">
+                            <div class="tc-card-icon tc-white tc-green">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                            </div>
+                            <h3>Polokwane Offices</h3>
+                            <p class="tc-tag tc-green">Limpopo</p>
+                            <p class="tc-text">3rd Floor, 58-60 Landdros Mare St, Thabakgolo, Polokwane, South Africa</p>
+                            <div class="tc-meta">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"></circle><path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
+                                Mon–Fri, 8am–4pm SAST
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
             </div>
         </div>
+
         <!-- Contact End -->
 
         <!-- Footer Start -->
