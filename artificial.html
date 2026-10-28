@@ -28,6 +28,83 @@
 
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
+
+        <!-- Professional compact layout -->
+        <style>
+            .section-label {
+                font-size: 0.8rem;
+                font-weight: 700;
+                letter-spacing: 0.12em;
+                text-transform: uppercase;
+            }
+            .pro-img {
+                width: 100%;
+                height: 240px;
+                object-fit: cover;
+                display: block;
+                border-radius: 14px;
+                box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+            }
+            .pro-img {
+                width: 100%;
+                height: 390px;   /* was 240-280px, try 350-450px */
+                object-fit: cover;
+                display: block;
+                border-radius: 14px;
+                box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+            .pro-card:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+            }
+            .pro-card .pro-icon {
+                width: 44px;
+                height: 44px;
+                border-radius: 10px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                background: rgba(0, 0, 0, 0.05);
+                margin-bottom: 0.7rem;
+            }
+            .pro-card h5 { font-size: 1.05rem; margin: 0 0 0.35rem; }
+            .pro-card p { font-size: 0.88rem; line-height: 1.5; margin: 0; }
+            .strip-band {
+                border-radius: 14px;
+                background: rgba(0, 0, 0, 0.04);
+                padding: 1.25rem 1.5rem;
+            }
+            .strip-item { display: flex; align-items: flex-start; }
+            .strip-item i { width: 2.2rem; text-align: center; margin-top: 0.15rem; }
+            .strip-item h6 { margin: 0; font-weight: 700; }
+            .strip-item p { margin: 0; font-size: 0.85rem; line-height: 1.4; }
+            .step-num {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 1.4rem;
+                height: 1.4rem;
+                border-radius: 50%;
+                background: var(--bs-primary, #0d6efd);
+                color: #fff;
+                font-size: 0.72rem;
+                font-weight: 700;
+                margin-right: 0.4rem;
+            }
+            .contact-panel {
+                border-radius: 14px;
+                overflow: hidden;
+                border: 1px solid rgba(0, 0, 0, 0.08);
+                background: #fff;
+            }
+            .contact-panel .panel-img {
+                width: 100%;
+                height: 100%;
+                min-height: 170px;
+                object-fit: cover;
+                display: block;
+            }
+        </style>
     </head>
 
     <body>
@@ -76,10 +153,10 @@
     </div>
 </nav>
 
-            <!-- Header Start -->
+            <!-- Header Start (short) -->
             <div class="container-fluid bg-breadcrumb">
-                <div class="container text-center py-5" style="max-width: 900px;">
-                    <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Artificial Intelligence</h4>
+                <div class="container text-center py-3" style="max-width: 900px;">
+                    <h4 class="text-white display-6 mb-2 wow fadeInDown" data-wow-delay="0.1s">Artificial Intelligence</h4>
                     <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
                         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
                         <li class="breadcrumb-item"><a href="service.html">Services</a></li>
@@ -92,16 +169,19 @@
         <!-- Navbar & Hero End -->
 
 
-        <!-- AI Intro Start -->
-        <div class="container-fluid about py-5">
-            <div class="container py-5">
-                <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.2s" style="max-width: 900px;">
-                    <h4 class="text-primary">Artificial Intelligence</h4>
-                    <h1 class="display-5 mb-4">AI Solutions by Mphoti Consulting</h1>
-                    <p class="mb-4">At Mphoti Consulting, we help organisations unlock the power of Artificial Intelligence to drive efficiency, improve decision-making, and create smarter customer experiences. Our AI-as-a-Service offering is designed to make advanced AI capabilities accessible, practical, and impactful; without the complexity typically associated with AI adoption.
-                    </p>
-                    <p class="mb-0">We work closely with our clients to identify high-value use cases and implement tailored AI solutions that integrate seamlessly into existing systems and business processes.
-                    </p>
+        <!-- AI Intro Start (picture 1) -->
+        <div class="container-fluid about pt-4 pb-3">
+            <div class="container">
+                <div class="row g-4 align-items-center">
+                    <div class="col-lg-5 wow fadeInLeft" data-wow-delay="0.2s">
+                        <img src="img/AI-hero.png" class="pro-img" alt="Artificial Intelligence">
+                    </div>
+                    <div class="col-lg-7 wow fadeInRight" data-wow-delay="0.2s">
+                        <div class="section-label text-primary mb-2">Artificial Intelligence</div>
+                        <h1 class="display-6 mb-2">AI Solutions by Mphoti Consulting</h1>
+                        <p class="mb-3">We make AI practical and accessible, helping you improve efficiency, decision-making and customer experience through tailored solutions that fit your existing systems and processes.</p>
+                        <a href="contact.html" class="btn btn-primary rounded-pill py-2 px-5">Get In Touch</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -109,51 +189,38 @@
 
 
         <!-- What We Offer Start -->
-        <div class="container-fluid feature pb-5">
-            <div class="container pb-5">
-                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-                    <h4 class="text-primary">What We Offer</h4>
-                    <h1 class="display-5 mb-4">Intelligent solutions built around your business</h1>
+        <div class="container-fluid feature pb-3">
+            <div class="container">
+                <div class="text-center mb-3 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="section-label text-primary mb-1">What we offer</div>
                 </div>
-                <div class="row g-4">
-                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="feature-item p-4">
-                            <div class="feature-icon p-4 mb-4">
-                                <i class="fas fa-cogs fa-4x text-primary"></i>
-                            </div>
-                            <h4>Intelligent Automation</h4>
-                            <p class="mb-0">Streamline repetitive and time-consuming processes using AI-driven automation. From document processing to workflow optimisation, we help reduce manual effort and operational costs.
-                            </p>
+                <div class="row g-3">
+                    <div class="col-md-6 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="pro-card">
+                            <div class="pro-icon"><i class="fas fa-cogs fa-lg text-primary"></i></div>
+                            <h5>Intelligent Automation</h5>
+                            <p>Automate repetitive work, from document processing to workflows, to cut effort and cost.</p>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="feature-item p-4">
-                            <div class="feature-icon p-4 mb-4">
-                                <i class="fas fa-robot fa-4x text-primary"></i>
-                            </div>
-                            <h4>AI-Powered Customer Engagement</h4>
-                            <p class="mb-0">Enhance customer experience through chatbots, virtual assistants, and personalised interactions. We design solutions that improve response times and increase customer satisfaction.
-                            </p>
+                    <div class="col-md-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="pro-card">
+                            <div class="pro-icon"><i class="fas fa-robot fa-lg text-primary"></i></div>
+                            <h5>Customer Engagement</h5>
+                            <p>Chatbots and virtual assistants that speed up responses and raise satisfaction.</p>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.6s">
-                        <div class="feature-item p-4">
-                            <div class="feature-icon p-4 mb-4">
-                                <i class="fas fa-chart-line fa-4x text-primary"></i>
-                            </div>
-                            <h4>Data Insights &amp; Predictive Analytics</h4>
-                            <p class="mb-0">Turn your data into actionable insights. We build AI models that help you forecast trends, understand customer behaviour, and make data-driven decisions with confidence.
-                            </p>
+                    <div class="col-md-6 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="pro-card">
+                            <div class="pro-icon"><i class="fas fa-chart-line fa-lg text-primary"></i></div>
+                            <h5>Predictive Analytics</h5>
+                            <p>Models that forecast trends and customer behaviour for confident, data-driven decisions.</p>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.8s">
-                        <div class="feature-item p-4">
-                            <div class="feature-icon p-4 mb-4">
-                                <i class="fas fa-brain fa-4x text-primary"></i>
-                            </div>
-                            <h4>Custom AI Solutions</h4>
-                            <p class="mb-0">Every business is different. We develop tailored AI solutions aligned to your specific industry, challenges, and goals; whether it's fraud detection, recommendation engines, or intelligent search.
-                            </p>
+                    <div class="col-md-6 col-xl-3 wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="pro-card">
+                            <div class="pro-icon"><i class="fas fa-brain fa-lg text-primary"></i></div>
+                            <h5>Custom AI Solutions</h5>
+                            <p>Tailored to your industry, from fraud detection to recommendations and intelligent search.</p>
                         </div>
                     </div>
                 </div>
@@ -162,137 +229,105 @@
         <!-- What We Offer End -->
 
 
-        <!-- Our Approach Start -->
-        <div class="container-fluid about pb-5">
-            <div class="container pb-5">
-                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-                    <h4 class="text-primary">Our Approach</h4>
-                    <h1 class="display-5 mb-4">A practical, business-first approach to AI</h1>
+        <!-- Approach + Why Mphoti (compact strips) Start -->
+        <div class="container-fluid about pb-3">
+            <div class="container">
+                <div class="strip-band wow fadeInUp" data-wow-delay="0.2s">
+
+                    <div class="section-label text-primary mb-2">Our approach</div>
+                    <div class="row g-3 mb-3">
+                        <div class="col-6 col-md">
+                            <div class="strip-item">
+                                <i class="fas fa-search text-primary"></i>
+                                <div><h6><span class="step-num">1</span>Discover</h6><p>Find where AI adds real value.</p></div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md">
+                            <div class="strip-item">
+                                <i class="fas fa-drafting-compass text-primary"></i>
+                                <div><h6><span class="step-num">2</span>Design</h6><p>Align the solution to your goals.</p></div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md">
+                            <div class="strip-item">
+                                <i class="fas fa-code text-primary"></i>
+                                <div><h6><span class="step-num">3</span>Develop</h6><p>Build scalable, secure models.</p></div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md">
+                            <div class="strip-item">
+                                <i class="fas fa-rocket text-primary"></i>
+                                <div><h6><span class="step-num">4</span>Deploy</h6><p>Integrate with existing systems.</p></div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md">
+                            <div class="strip-item">
+                                <i class="fas fa-sync-alt text-primary"></i>
+                                <div><h6><span class="step-num">5</span>Optimise</h6><p>Keep improving outcomes.</p></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="my-3" style="opacity:.12;">
+
+                    <div class="section-label text-primary mb-2">Why Mphoti Consulting</div>
+                    <div class="row g-3">
+                        <div class="col-6 col-lg-3">
+                            <div class="strip-item">
+                                <i class="fas fa-building text-primary"></i>
+                                <div><h6>Enterprise Experience</h6><p>Large South African organisations.</p></div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-3">
+                            <div class="strip-item">
+                                <i class="fas fa-bullseye text-primary"></i>
+                                <div><h6>Business-Focused</h6><p>ROI and real-world impact.</p></div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-3">
+                            <div class="strip-item">
+                                <i class="fas fa-layer-group text-primary"></i>
+                                <div><h6>Scalable Solutions</h6><p>Built to grow with you.</p></div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-3">
+                            <div class="strip-item">
+                                <i class="fas fa-map-marker-alt text-primary"></i>
+                                <div><h6>Local Understanding</h6><p>Tailored for South Africa.</p></div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-                <div class="row g-4">
-                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="d-flex">
-                            <div><i class="fas fa-search fa-3x text-primary"></i></div>
-                            <div class="ms-4">
-                                <h4>Discover</h4>
-                                <p>Identify opportunities where AI can deliver real value.</p>
-                            </div>
+            </div>
+        </div>
+        <!-- Approach + Why Mphoti End -->
+
+
+        <!-- Get In Touch Start (picture 2) -->
+        <div class="container-fluid pb-4">
+            <div class="container">
+                <div class="contact-panel wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="row g-0 align-items-stretch">
+                        <div class="col-lg-8 p-4 d-flex flex-column justify-content-center">
+                            <div class="section-label text-primary mb-1">AI made simple, practical and scalable</div>
+                            <h3 class="mb-2">Let's have a chat.</h3>
+                            <p class="mb-3 small">A partner that simplifies AI adoption and delivers measurable business value.</p>
+                            <div><a class="btn btn-primary rounded-pill py-2 px-5" href="contact.html">Get In Touch</a></div>
                         </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="d-flex">
-                            <div><i class="fas fa-drafting-compass fa-3x text-primary"></i></div>
-                            <div class="ms-4">
-                                <h4>Design</h4>
-                                <p>Define the right solution aligned to your business goals.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.6s">
-                        <div class="d-flex">
-                            <div><i class="fas fa-code fa-3x text-primary"></i></div>
-                            <div class="ms-4">
-                                <h4>Develop</h4>
-                                <p>Build scalable and secure AI models and integrations.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="d-flex">
-                            <div><i class="fas fa-rocket fa-3x text-primary"></i></div>
-                            <div class="ms-4">
-                                <h4>Deploy</h4>
-                                <p>Seamlessly integrate into your existing systems.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="d-flex">
-                            <div><i class="fas fa-sync-alt fa-3x text-primary"></i></div>
-                            <div class="ms-4">
-                                <h4>Optimise</h4>
-                                <p>Continuously improve performance and outcomes.</p>
-                            </div>
+                        <div class="col-lg-4">
+                            
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Our Approach End -->
-
-
-        <!-- Why Mphoti Start -->
-        <div class="container-fluid feature pb-5">
-            <div class="container pb-5">
-                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-                    <h4 class="text-primary">Why Mphoti Consulting</h4>
-                    <h1 class="display-5 mb-4">Your partner for real-world AI impact</h1>
-                </div>
-                <div class="row g-4">
-                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="feature-item p-4">
-                            <div class="feature-icon p-4 mb-4">
-                                <i class="fas fa-building fa-4x text-primary"></i>
-                            </div>
-                            <h4>Enterprise Experience</h4>
-                            <p class="mb-0">Proven track record working with large South African organisations.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="feature-item p-4">
-                            <div class="feature-icon p-4 mb-4">
-                                <i class="fas fa-bullseye fa-4x text-primary"></i>
-                            </div>
-                            <h4>Business-Focused</h4>
-                            <p class="mb-0">We prioritise ROI and real-world impact, not just technology.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.6s">
-                        <div class="feature-item p-4">
-                            <div class="feature-icon p-4 mb-4">
-                                <i class="fas fa-layer-group fa-4x text-primary"></i>
-                            </div>
-                            <h4>Scalable Solutions</h4>
-                            <p class="mb-0">Built to grow with your business.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.8s">
-                        <div class="feature-item p-4">
-                            <div class="feature-icon p-4 mb-4">
-                                <i class="fas fa-map-marker-alt fa-4x text-primary"></i>
-                            </div>
-                            <h4>Local Understanding</h4>
-                            <p class="mb-0">Solutions tailored for the South African market.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Why Mphoti End -->
-
-
-        <!-- AI Made Simple Start -->
-        <div class="container-fluid service pb-5">
-            <div class="container pb-5">
-                <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-                    <h4 class="text-primary">Get In Touch</h4>
-                    <h1 class="display-5 mb-4">AI Made Simple, Practical, and Scalable</h1>
-                    <p class="mb-4">Artificial Intelligence doesn't have to be complex or out of reach. With Mphoti Consulting, you gain a partner that simplifies AI adoption and delivers measurable business value; helping you stay competitive in a rapidly evolving digital landscape.
-                    </p>
-                    <a class="btn btn-primary rounded-pill py-3 px-5" href="contact.html">Let's have a chat</a>
-                </div>
-            </div>
-        </div>
-        <!-- AI Made Simple End -->
+        <!-- Get In Touch End -->
 
         <!-- Footer Start -->
-        <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
-            <div class="container py-5 border-start-0 border-end-0" style="border: 1px solid; border-color: rgb(255, 255, 255, 0.08);">
-                <div class="row g-5">
+        <div class="container-fluid footer py-4 wow fadeIn" data-wow-delay="0.2s">
+            <div class="container py-4 border-start-0 border-end-0" style="border: 1px solid; border-color: rgb(255, 255, 255, 0.08);">
+                <div class="row g-4">
                     <div class="col-md-6 col-lg-6 col-xl-4">
                         <div class="footer-item">
                             <a href="index.html" class="p-0">

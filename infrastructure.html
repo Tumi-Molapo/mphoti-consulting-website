@@ -28,6 +28,73 @@
 
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
+
+        <!-- Professional layout -->
+        <style>
+            .section-label {
+                font-size: 0.8rem;
+                font-weight: 700;
+                letter-spacing: 0.12em;
+                text-transform: uppercase;
+            }
+            .pro-img {
+                width: 100%;
+                height: 390px;   /* was 240-280px, try 350-450px */
+                object-fit: cover;
+                display: block;
+                border-radius: 14px;
+                box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+            }
+            .pro-card {
+                height: 100%;
+                background: #fff;
+                border: 1px solid rgba(0, 0, 0, 0.08);
+                border-top: 3px solid var(--bs-primary, #0d6efd);
+                border-radius: 10px;
+                padding: 1.4rem 1.4rem 1.2rem;
+                transition: transform .25s ease, box-shadow .25s ease;
+            }
+            .pro-card:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+            }
+            .pro-card .pro-icon {
+                width: 48px;
+                height: 48px;
+                border-radius: 10px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                background: rgba(0, 0, 0, 0.05);
+                margin-bottom: 0.9rem;
+            }
+            .pro-card h5 { font-size: 1.08rem; margin: 0 0 0.4rem; }
+            .pro-card p { font-size: 0.9rem; line-height: 1.5; margin: 0 0 0.6rem; }
+            .pro-card ul { font-size: 0.87rem; margin: 0; }
+            .pro-card li { margin-bottom: 0.25rem; }
+            .why-band {
+                border-radius: 14px;
+                background: rgba(0, 0, 0, 0.04);
+                padding: 1.5rem 1.75rem;
+            }
+            .why-item { display: flex; align-items: flex-start; }
+            .why-item i { width: 2.4rem; text-align: center; margin-top: 0.15rem; }
+            .why-item h6 { margin: 0; font-weight: 700; }
+            .why-item p { margin: 0; font-size: 0.88rem; line-height: 1.4; }
+            .contact-panel {
+                border-radius: 14px;
+                overflow: hidden;
+                border: 1px solid rgba(0, 0, 0, 0.08);
+                background: #fff;
+            }
+            .contact-panel .panel-img {
+                width: 100%;
+                height: 100%;
+                min-height: 220px;
+                object-fit: cover;
+                display: block;
+            }
+        </style>
     </head>
 
     <body>
@@ -76,10 +143,10 @@
     </div>
 </nav>
 
-            <!-- Header Start -->
+            <!-- Header Start (short) -->
             <div class="container-fluid bg-breadcrumb">
-                <div class="container text-center py-5" style="max-width: 900px;">
-                    <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">IT Infrastructure Solutions</h4>
+                <div class="container text-center py-3" style="max-width: 900px;">
+                    <h4 class="text-white display-6 mb-2 wow fadeInDown" data-wow-delay="0.1s">IT Infrastructure Solutions</h4>
                     <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
                         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
                         <li class="breadcrumb-item"><a href="service.html">Services</a></li>
@@ -92,23 +159,18 @@
         <!-- Navbar & Hero End -->
 
 
-        <!-- Intro Start -->
-        <div class="container-fluid about py-5">
-            <div class="container py-5">
+        <!-- Intro Start (picture 1, now on the right) -->
+        <div class="container-fluid about pt-5 pb-4">
+            <div class="container">
                 <div class="row g-5 align-items-center">
-                    <div class="col-xl-7 wow fadeInLeft" data-wow-delay="0.2s">
-                        <h4 class="text-primary">Powering South African Businesses with</h4>
-                        <h1 class="display-5 mb-4">Reliable, Scalable Infrastructure</h1>
-                        <p class="mb-4">At Mphoti Consulting, we provide end-to-end IT infrastructure solutions designed to support modern South African businesses. From structured network cabling and electrical installations to boardroom setups and CCTV systems, we build the foundation that keeps your business connected, secure, and running efficiently.
-                        </p>
-                        <p class="mb-4">Whether you're setting up a new office, upgrading your current environment, or expanding operations, our team delivers professional, compliant, and future-ready infrastructure solutions.
-                        </p>
-                        <a href="contact.html" class="btn btn-primary rounded-pill py-3 px-5">Get In Touch</a>
+                    <div class="col-lg-7 order-2 order-lg-1 wow fadeInLeft" data-wow-delay="0.2s">
+                        <div class="section-label text-primary mb-2">Powering South African businesses with</div>
+                        <h1 class="display-6 mb-3">Reliable, Scalable Infrastructure</h1>
+                        <p class="mb-3">From structured cabling and electrical installations to boardrooms and CCTV, we build the foundation that keeps your business connected, secure and running, whether you're setting up, upgrading or expanding.</p>
+                        <a href="contact.html" class="btn btn-primary rounded-pill py-2 px-5">Get In Touch</a>
                     </div>
-                    <div class="col-xl-5 wow fadeInRight" data-wow-delay="0.2s">
-                        <div class="bg-primary rounded position-relative overflow-hidden">
-                            <img src="img/service-2.jpg" class="img-fluid rounded w-100" alt="IT Infrastructure Solutions">
-                        </div>
+                    <div class="col-lg-5 order-1 order-lg-2 wow fadeInRight" data-wow-delay="0.2s">
+                        <img src="img/sev-2.jpg" class="pro-img" alt="IT Infrastructure Solutions">
                     </div>
                 </div>
             </div>
@@ -117,110 +179,76 @@
 
 
         <!-- Our Services Start -->
-        <div class="container-fluid service pb-5">
-            <div class="container pb-5">
-                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-                    <h4 class="text-primary">Our Services</h4>
-                    <h1 class="display-5 mb-4">Everything your office needs to run</h1>
+        <div class="container-fluid service pb-4">
+            <div class="container">
+                <div class="text-center mb-4 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="section-label text-primary mb-1">Our services</div>
+                    <h2 class="mb-0">Everything your office needs to run</h2>
                 </div>
                 <div class="row g-4 justify-content-center">
 
-                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="service-item h-100">
-                            <div class="service-img">
-                                <img src="img/service-1.jpg" class="img-fluid rounded-top w-100" alt="Network Cabling">
-                            </div>
-                            <div class="rounded-bottom p-4">
-                                <a href="#" class="h4 d-inline-block mb-3">Network Cabling &amp; Structured Connectivity</a>
-                                <p class="mb-3">A strong network starts with the right cabling infrastructure. We design and install structured cabling systems that support high-speed connectivity and long-term scalability.
-                                </p>
-                                <ul class="list-unstyled mb-0">
-                                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>CAT6 / CAT6a / Fibre installations</li>
-                                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Network points for offices and workstations</li>
-                                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Server room cabling and rack setup</li>
-                                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Cable management and labelling</li>
-                                    <li class="mb-0"><i class="fas fa-check text-primary me-2"></i>Network troubleshooting and upgrades</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="service-item h-100">
-                            <div class="service-img">
-                                <img src="img/service-2.jpg" class="img-fluid rounded-top w-100" alt="Electrical Installations">
-                            </div>
-                            <div class="rounded-bottom p-4">
-                                <a href="#" class="h4 d-inline-block mb-3">Electrical Installations &amp; Office Power Solutions</a>
-                                <p class="mb-3">Reliable power is critical to business operations. We provide safe and compliant electrical services tailored for commercial environments.
-                                </p>
-                                <ul class="list-unstyled mb-0">
-                                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Office electrical wiring and distribution</li>
-                                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>DB board upgrades and installations</li>
-                                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Backup power solutions (UPS &amp; inverter-ready setups)</li>
-                                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Lighting installations (including energy-efficient LED solutions)</li>
-                                    <li class="mb-0"><i class="fas fa-check text-primary me-2"></i>Compliance with South African electrical standards</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.6s">
-                        <div class="service-item h-100">
-                            <div class="service-img">
-                                <img src="img/service-3.jpg" class="img-fluid rounded-top w-100" alt="Boardroom and Smart Office Setup">
-                            </div>
-                            <div class="rounded-bottom p-4">
-                                <a href="#" class="h4 d-inline-block mb-3">Boardroom &amp; Smart Office Setup</a>
-                                <p class="mb-3">Transform your meeting spaces into modern, collaborative environments with our professional boardroom solutions.
-                                </p>
-                                <ul class="list-unstyled mb-0">
-                                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>TV and display installations</li>
-                                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Video conferencing systems (Zoom, Teams, Google Meet)</li>
-                                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Audio systems and microphones</li>
-                                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Wireless presentation solutions</li>
-                                    <li class="mb-0"><i class="fas fa-check text-primary me-2"></i>Smart automation for lighting and presentations</li>
-                                </ul>
-                            </div>
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="pro-card">
+                            <div class="pro-icon"><i class="fas fa-network-wired fa-lg text-primary"></i></div>
+                            <h5>Network Cabling &amp; Connectivity</h5>
+                            <p>Structured cabling built for high-speed, scalable connectivity.</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-primary me-2"></i>CAT6 / CAT6a / Fibre</li>
+                                <li><i class="fas fa-check text-primary me-2"></i>Server room and rack setup</li>
+                                <li><i class="fas fa-check text-primary me-2"></i>Troubleshooting and upgrades</li>
+                            </ul>
                         </div>
                     </div>
 
                     <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="service-item h-100">
-                            <div class="service-img">
-                                <img src="img/service-4.jpg" class="img-fluid rounded-top w-100" alt="CCTV Installation and Security Systems">
-                            </div>
-                            <div class="rounded-bottom p-4">
-                                <a href="#" class="h4 d-inline-block mb-3">CCTV Installation &amp; Security Systems</a>
-                                <p class="mb-3">Protect your business with intelligent surveillance and monitoring solutions designed for South African environments.
-                                </p>
-                                <ul class="list-unstyled mb-0">
-                                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>HD and IP CCTV camera installations</li>
-                                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Remote monitoring via mobile and desktop</li>
-                                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Access control and intercom systems</li>
-                                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Motion detection and alert systems</li>
-                                    <li class="mb-0"><i class="fas fa-check text-primary me-2"></i>Ongoing maintenance and support</li>
-                                </ul>
-                            </div>
+                        <div class="pro-card">
+                            <div class="pro-icon"><i class="fas fa-bolt fa-lg text-primary"></i></div>
+                            <h5>Electrical &amp; Office Power</h5>
+                            <p>Safe, compliant electrical services for commercial spaces.</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-primary me-2"></i>Wiring and DB board upgrades</li>
+                                <li><i class="fas fa-check text-primary me-2"></i>UPS and inverter-ready backup</li>
+                                <li><i class="fas fa-check text-primary me-2"></i>LED lighting, SA-compliant</li>
+                            </ul>
                         </div>
                     </div>
 
-                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="service-item h-100">
-                            <div class="service-img">
-                                <img src="img/service-5.jpg" class="img-fluid rounded-top w-100" alt="Office Setup and Infrastructure Rollout">
-                            </div>
-                            <div class="rounded-bottom p-4">
-                                <a href="#" class="h4 d-inline-block mb-3">Office Setup &amp; Infrastructure Rollout</a>
-                                <p class="mb-3">We handle full office setups from the ground up, ensuring everything is ready for your team to operate efficiently from day one.
-                                </p>
-                                <ul class="list-unstyled mb-0">
-                                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>New office infrastructure planning and implementation</li>
-                                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Desk setups, network and power allocation</li>
-                                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Server room and network cabinet installations</li>
-                                    <li class="mb-0"><i class="fas fa-check text-primary me-2"></i>Relocations and infrastructure upgrades</li>
-                                </ul>
-                            </div>
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="pro-card">
+                            <div class="pro-icon"><i class="fas fa-video fa-lg text-primary"></i></div>
+                            <h5>Boardroom &amp; Smart Office</h5>
+                            <p>Modern, collaborative meeting spaces.</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-primary me-2"></i>Displays and audio systems</li>
+                                <li><i class="fas fa-check text-primary me-2"></i>Zoom, Teams and Meet rooms</li>
+                                <li><i class="fas fa-check text-primary me-2"></i>Wireless presentation and automation</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="pro-card">
+                            <div class="pro-icon"><i class="fas fa-shield-alt fa-lg text-primary"></i></div>
+                            <h5>CCTV &amp; Security Systems</h5>
+                            <p>Intelligent surveillance for South African environments.</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-primary me-2"></i>HD and IP cameras</li>
+                                <li><i class="fas fa-check text-primary me-2"></i>Remote mobile and desktop monitoring</li>
+                                <li><i class="fas fa-check text-primary me-2"></i>Access control and alerts</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="pro-card">
+                            <div class="pro-icon"><i class="fas fa-building fa-lg text-primary"></i></div>
+                            <h5>Office Setup &amp; Rollout</h5>
+                            <p>Full office setups so your team is ready from day one.</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-primary me-2"></i>Planning and implementation</li>
+                                <li><i class="fas fa-check text-primary me-2"></i>Desk, network and power allocation</li>
+                                <li><i class="fas fa-check text-primary me-2"></i>Relocations and upgrades</li>
+                            </ul>
                         </div>
                     </div>
 
@@ -231,39 +259,34 @@
 
 
         <!-- Why Choose Start -->
-        <div class="container-fluid feature pb-5">
-            <div class="container pb-5">
-                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-                    <h4 class="text-primary">Why Choose Mphoti Consulting?</h4>
-                    <h1 class="display-5 mb-4">Built for real-world conditions</h1>
-                    <p class="mb-0">We understand the unique challenges of operating in South Africa &mdash; from load shedding to infrastructure constraints &mdash; and design solutions that work in real-world conditions.
-                    </p>
-                </div>
-                <div class="row g-4">
-                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="d-flex">
-                            <div><i class="fas fa-layer-group fa-3x text-primary"></i></div>
-                            <div class="ms-4">
-                                <h4>Reliable &amp; Scalable Solutions</h4>
-                                <p>Our infrastructure is built to grow with your business, ensuring long-term performance and minimal downtime.</p>
-                            </div>
+        <div class="container-fluid feature pb-4">
+            <div class="container">
+                <div class="why-band wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="row g-4 align-items-center">
+                        <div class="col-lg-4">
+                            <div class="section-label text-primary mb-1">Why choose Mphoti Consulting?</div>
+                            <p class="mb-0 small">Designed for South African realities, from load shedding to infrastructure constraints, for SMEs and enterprises alike.</p>
                         </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="d-flex">
-                            <div><i class="fas fa-shield-alt fa-3x text-primary"></i></div>
-                            <div class="ms-4">
-                                <h4>Security-Focused Approach</h4>
-                                <p>From network design to CCTV, we prioritise the safety and integrity of your business systems and physical environment.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.6s">
-                        <div class="d-flex">
-                            <div><i class="fas fa-tasks fa-3x text-primary"></i></div>
-                            <div class="ms-4">
-                                <h4>End-to-End Service</h4>
-                                <p>We handle everything &mdash; from planning and installation to maintenance and support &mdash; so you don't have to deal with multiple vendors.</p>
+                        <div class="col-lg-8">
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <div class="why-item">
+                                        <i class="fas fa-layer-group fa-2x text-primary"></i>
+                                        <div><h6>Reliable &amp; Scalable</h6><p>Built to grow with minimal downtime.</p></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="why-item">
+                                        <i class="fas fa-lock fa-2x text-primary"></i>
+                                        <div><h6>Security-Focused</h6><p>From network design to CCTV.</p></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="why-item">
+                                        <i class="fas fa-tasks fa-2x text-primary"></i>
+                                        <div><h6>End-to-End Service</h6><p>One vendor from planning to support.</p></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -273,32 +296,30 @@
         <!-- Why Choose End -->
 
 
-        <!-- Built For SA Start -->
-        <div class="container-fluid about pb-5">
-            <div class="container pb-5">
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.2s">
-                        <h4 class="text-primary">Built for South African Businesses</h4>
-                        <h1 class="display-5 mb-4">Practical, compliant, and cost-effective</h1>
-                        <p class="mb-0">We proudly support SMEs and enterprise clients across industries including finance, retail, gaming, and professional services. Whether you're a startup setting up your first office or an established business upgrading your infrastructure, we deliver solutions that are practical, compliant, and cost-effective.
-                        </p>
-                    </div>
-                    <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.2s">
-                        <h4 class="text-primary">Future-Proof Your Infrastructure Today</h4>
-                        <h1 class="display-5 mb-4">Let's have a chat.</h1>
-                        <p class="mb-4">Your business depends on reliable connectivity, power, and security. Let Mphoti Consulting help you build an infrastructure that supports productivity, protects your assets, and enables growth.
-                        </p>
-                        <a class="btn btn-primary rounded-pill py-3 px-5" href="contact.html">Get In Touch</a>
+        <!-- Get In Touch Start (picture 2) -->
+        <div class="container-fluid pb-5">
+            <div class="container">
+                <div class="contact-panel wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="row g-0 align-items-stretch">
+                        <div class="col-lg-7 p-4 p-lg-5 d-flex flex-column justify-content-center">
+                            <div class="section-label text-primary mb-2">Future-proof your infrastructure today</div>
+                            <h2 class="mb-2">Let's have a chat.</h2>
+                            <p class="mb-3">Practical, compliant and cost-effective infrastructure that supports productivity, protects your assets and enables growth.</p>
+                            <div><a class="btn btn-primary rounded-pill py-2 px-5" href="contact.html">Get In Touch</a></div>
+                        </div>
+                        <div class="col-lg-5">
+                            
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Built For SA End -->
+        <!-- Get In Touch End -->
 
         <!-- Footer Start -->
-        <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
-            <div class="container py-5 border-start-0 border-end-0" style="border: 1px solid; border-color: rgb(255, 255, 255, 0.08);">
-                <div class="row g-5">
+        <div class="container-fluid footer py-4 wow fadeIn" data-wow-delay="0.2s">
+            <div class="container py-4 border-start-0 border-end-0" style="border: 1px solid; border-color: rgb(255, 255, 255, 0.08);">
+                <div class="row g-4">
                     <div class="col-md-6 col-lg-6 col-xl-4">
                         <div class="footer-item">
                             <a href="index.html" class="p-0">
