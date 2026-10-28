@@ -155,9 +155,13 @@
         <!-- Spinner End -->
         <!-- Navbar & Hero Start -->
         <div class="container-fluid position-relative p-0">
+          
             <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
                        <a href="" class="navbar-brand p-0">
                     <img src="img/logo.png" alt="mphoti Logo" style="max-height: 60px;">
+                <a href="index.html" class="navbar-brand p-0">
+                    <h1 class="text-primary"><i class="fas fa-search-dollar me-3"></i>Stocker</h1>
+                    <!-- <img src="img/logo.png" alt="Logo"> -->
                 </a>
                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"></button>
                 <input type="checkbox" id="mp-nav-toggle" class="mp-nav-check" aria-hidden="true">
@@ -174,14 +178,26 @@
                             <a class="nav-link" tabindex="0" role="button" aria-haspopup="true">
                                 <span class="dropdown-toggle">Services</span>
                             </a>
+                        <a href="about.html" class="nav-item nav-link">About Us</a>
+
+                        <div class="nav-item dropdown" id="servicesDropdown">
+                            <!-- Plain link: always goes to service.html -->
+                            <a href="service.html" class="nav-link">Services <i class="fas fa-angle-down ms-1 d-none d-lg-inline"></i></a>
+
+                            <!-- Arrow for phones/tablets only: opens the sub-menu without leaving the page -->
+                            <a href="#" class="nav-link dropdown-toggle d-lg-none" data-bs-toggle="dropdown" aria-label="Show service pages">More services</a>
+
                             <div class="dropdown-menu m-0">
-                                <a href="service.html" class="dropdown-item">Our Services</a>
-                                <a href="feature.html" class="dropdown-item">Our Features</a>
-                                <a href="offer.html" class="dropdown-item">Our Offer</a>
+                                <a href="artificial.html" class="dropdown-item">Artificial Intelligence</a>
+                                <a href="infrastructure.html" class="dropdown-item">IT Infrastructure Solutions</a>
+                                <a href="security.html" class="dropdown-item">Cyber Security</a>
                             </div>
                         </div>
                         <a href="careers.html" class="nav-item nav-link">Careers</a>
                         <a href="contact.html" class="nav-item nav-link">Contact Us</a>
+
+                        <a href="careers.html" class="nav-item nav-link">Careers</a>
+                        <a href="contact.html" class="nav-item nav-link">Contacts</a>
                     </div>
                 </div>
             </nav>
@@ -199,6 +215,37 @@
                             <div class="d-flex flex-wrap gap-3">
                                 <a class="btn btn-primary rounded-pill py-3 px-5" href="service.html">Get Started</a>
                                 <a class="btn btn-light rounded-pill py-3 px-4" href="https://www.youtube.com/watch?v=T5sSxycDatw" target="_blank" rel="noopener noreferrer"><i class="fas fa-play-circle me-2"></i> Watch Video</a>
+            
+
+            <!-- Carousel Start -->
+            <div class="header-carousel owl-carousel">
+                <div class="header-carousel-item">
+                    <img src="img/carousel-1.jpg" class="img-fluid w-100" alt="Image">
+                    <div class="carousel-caption">
+                        <div class="container">
+                            <div class="row gy-0 gx-5">
+                                <div class="col-lg-0 col-xl-5"></div>
+                                <div class="col-xl-7 animated fadeInLeft">
+                                    <div class="text-sm-center text-md-end">
+                                        <h4 class="text-primary text-uppercase fw-bold mb-4">Welcome To Stocker</h4>
+                                        <h1 class="display-4 text-uppercase text-white mb-4">Invest your money with higher return</h1>
+                                        <p class="mb-5 fs-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy... 
+                                        </p>
+                                        <div class="d-flex justify-content-center justify-content-md-end flex-shrink-0 mb-4">
+                                            <a class="btn btn-light rounded-pill py-3 px-4 px-md-5 me-2" href="#"><i class="fas fa-play-circle me-2"></i> Watch Video</a>
+                                            <a class="btn btn-primary rounded-pill py-3 px-4 px-md-5 ms-2" href="#">Learn More</a>
+                                        </div>
+                                        <div class="d-flex align-items-center justify-content-center justify-content-md-end">
+                                            <h2 class="text-white me-2">Follow Us:</h2>
+                                            <div class="d-flex justify-content-end ms-2">
+                                                <a class="btn btn-md-square btn-light rounded-circle me-2" href=""><i class="fab fa-facebook-f"></i></a>
+                                                <a class="btn btn-md-square btn-light rounded-circle mx-2" href=""><i class="fab fa-twitter"></i></a>
+                                                <a class="btn btn-md-square btn-light rounded-circle mx-2" href=""><i class="fab fa-instagram"></i></a>
+                                                <a class="btn btn-md-square btn-light rounded-circle ms-2" href=""><i class="fab fa-linkedin-in"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="mp-checks">
                                 <span><i class="fas fa-check-circle"></i>Business-first thinking</span>

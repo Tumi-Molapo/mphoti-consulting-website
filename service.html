@@ -18,7 +18,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
         <!-- Libraries Stylesheet -->
-        <link href="lib/animate/animate.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="lib/animate/animate.min.css"/>
         <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
         <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
@@ -28,6 +28,74 @@
 
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
+
+        <!-- Professional services layout -->
+        <style>
+            .section-label {
+                font-size: 0.8rem;
+                font-weight: 700;
+                letter-spacing: 0.12em;
+                text-transform: uppercase;
+            }
+            .pro-img {
+                width: 100%;
+                height: 390px;   /* was 240-280px, try 350-450px */
+                object-fit: cover;
+                display: block;
+                border-radius: 14px;
+                box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+            }
+            .pillar-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 0.6rem 1rem;
+                margin-top: 1rem;
+            }
+            .pillar {
+                display: flex;
+                align-items: center;
+                font-size: 0.92rem;
+                font-weight: 500;
+            }
+            .pillar i { margin-right: 0.5rem; }
+            .pro-card {
+                height: 100%;
+                background: #fff;
+                border: 1px solid rgba(0, 0, 0, 0.08);
+                border-top: 3px solid var(--bs-primary, #0d6efd);
+                border-radius: 10px;
+                padding: 1.4rem 1.4rem 1.3rem;
+                transition: transform .25s ease, box-shadow .25s ease;
+            }
+            .pro-card:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+            }
+            .pro-card .pro-icon {
+                width: 48px;
+                height: 48px;
+                border-radius: 10px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                background: rgba(0, 0, 0, 0.05);
+                margin-bottom: 0.9rem;
+            }
+            .pro-card h5 { font-size: 1.08rem; margin: 0 0 0.45rem; }
+            .pro-card p { font-size: 0.9rem; line-height: 1.55; margin: 0; }
+            .contact-panel {
+                border-radius: 14px;
+                overflow: hidden;
+                background: rgba(0, 0, 0, 0.04);
+            }
+            .contact-panel .panel-img {
+                width: 100%;
+                height: 100%;
+                min-height: 220px;
+                object-fit: cover;
+                display: block;
+            }
+        </style>
     </head>
 
     <body>
@@ -68,15 +136,45 @@
                         <a href="contact.html" class="nav-item nav-link">Contact Us</a>
   
             </nav>
+    <a href="index.html" class="navbar-brand p-0">
+        <h1 class="text-primary"><i class="fas fa-search-dollar me-3"></i>Stocker</h1>
+        <!-- <img src="img/logo.png" alt="Logo"> -->
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="fa fa-bars"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto py-0">
+            <a href="index.html" class="nav-item nav-link">Home</a>
+            <a href="about.html" class="nav-item nav-link">About Us</a>
 
-            <!-- Header Start -->
+            <div class="nav-item dropdown" id="servicesDropdown">
+                <!-- Plain link: always goes to service.html -->
+                <a href="service.html" class="nav-link active">Services <i class="fas fa-angle-down ms-1 d-none d-lg-inline"></i></a>
+
+                <!-- Arrow for phones/tablets only: opens the sub-menu without leaving the page -->
+                <a href="#" class="nav-link dropdown-toggle d-lg-none" data-bs-toggle="dropdown" aria-label="Show service pages">More services</a>
+
+                <div class="dropdown-menu m-0">
+                    <a href="artificial.html" class="dropdown-item">Artificial Intelligence</a>
+                    <a href="infrastructure.html" class="dropdown-item">IT Infrastructure Solutions</a>
+                    <a href="security.html" class="dropdown-item">Cyber Security</a>
+                </div>
+            </div>
+
+            <a href="careers.html" class="nav-item nav-link">Careers</a>
+            <a href="contact.html" class="nav-item nav-link">Contacts</a>
+        </div>
+    </div>
+</nav>
+
+            <!-- Header Start (short) -->
             <div class="container-fluid bg-breadcrumb">
-                <div class="container text-center py-5" style="max-width: 900px;">
-                    <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Our Services</h4>
+                <div class="container text-center py-3" style="max-width: 900px;">
+                    <h4 class="text-white display-6 mb-2 wow fadeInDown" data-wow-delay="0.1s">Services</h4>
                     <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
                         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                        <li class="breadcrumb-item active text-primary">Service</li>
+                        <li class="breadcrumb-item active text-primary">Services</li>
                     </ol>    
                 </div>
             </div>
@@ -85,237 +183,120 @@
         <!-- Navbar & Hero End -->
 
 
-        <!-- Services Start -->
-        <div class="container-fluid service py-5">
-            <div class="container py-5">
-                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-                    <h4 class="text-primary">Our Services</h4>
-                    <h1 class="display-5 mb-4">We Services provided best offer</h1>
-                    <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt sint dolorem autem obcaecati, ipsam mollitia hic.
-                    </p>
-                </div>
-                <div class="row g-4">
-                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="service-item">
-                            <div class="service-img">
-                                <img src="img/service-1.jpg" class="img-fluid rounded-top w-100" alt="Image">
-                            </div>
-                            <div class="rounded-bottom p-4">
-                                <a href="#" class="h4 d-inline-block mb-4"> Strategy Consulting</a>
-                                <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, sint? Excepturi facilis neque nesciunt similique officiis veritatis,
-                                </p>
-                                <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
-                            </div>
+        <!-- Intro Start (picture 1, now on the right) -->
+        <div class="container-fluid about pt-5 pb-4">
+            <div class="container">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-7 order-2 order-lg-1 wow fadeInLeft" data-wow-delay="0.2s">
+                        <div class="section-label text-primary mb-2">Our services</div>
+                        <h1 class="display-6 mb-3">What you get from us</h1>
+                        <p class="mb-0">A single partner for software, infrastructure, cloud, marketing and security, delivered with a focus on quality and long-term value.</p>
+                        <div class="pillar-grid">
+                            <div class="pillar"><i class="fas fa-check-circle text-primary"></i>End-to-End Services</div>
+                            <div class="pillar"><i class="fas fa-check-circle text-primary"></i>Cutting-Edge Technologies</div>
+                            <div class="pillar"><i class="fas fa-check-circle text-primary"></i>Collaboration and Partnership</div>
+                            <div class="pillar"><i class="fas fa-check-circle text-primary"></i>Client-Centric Approach</div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="service-item">
-                            <div class="service-img">
-                                <img src="img/service-2.jpg" class="img-fluid rounded-top w-100" alt="Image">
-                            </div>
-                            <div class="rounded-bottom p-4">
-                                <a href="#" class="h4 d-inline-block mb-4">Financial Advisory</a>
-                                <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, sint? Excepturi facilis neque nesciunt similique officiis veritatis,
-                                </p>
-                                <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.6s">
-                        <div class="service-item">
-                            <div class="service-img">
-                                <img src="img/service-3.jpg" class="img-fluid rounded-top w-100" alt="Image">
-                            </div>
-                            <div class="rounded-bottom p-4">
-                                <a href="#" class="h4 d-inline-block mb-4">Managements</a>
-                                <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, sint? Excepturi facilis neque nesciunt similique officiis veritatis,
-                                </p>
-                                <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="service-item">
-                            <div class="service-img">
-                                <img src="img/service-4.jpg" class="img-fluid rounded-top w-100" alt="Image">
-                            </div>
-                            <div class="rounded-bottom p-4">
-                                <a href="#" class="h4 d-inline-block mb-4">Supply Optimization</a>
-                                <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, sint? Excepturi facilis neque nesciunt similique officiis veritatis,
-                                </p>
-                                <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="service-item">
-                            <div class="service-img">
-                                <img src="img/service-5.jpg" class="img-fluid rounded-top w-100" alt="Image">
-                            </div>
-                            <div class="rounded-bottom p-4">
-                                <a href="#" class="h4 d-inline-block mb-4">Hr Consulting</a>
-                                <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, sint? Excepturi facilis neque nesciunt similique officiis veritatis,
-                                </p>
-                                <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.6s">
-                        <div class="service-item">
-                            <div class="service-img">
-                                <img src="img/service-6.jpg" class="img-fluid rounded-top w-100" alt="Image">
-                            </div>
-                            <div class="rounded-bottom p-4">
-                                <a href="#" class="h4 d-inline-block mb-4">Marketing Consulting</a>
-                                <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, sint? Excepturi facilis neque nesciunt similique officiis veritatis,
-                                </p>
-                                <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
-                            </div>
-                        </div>
+                    <div class="col-lg-5 order-1 order-lg-2 wow fadeInRight" data-wow-delay="0.2s">
+                        <img src="img/hero-sev.jpg" class="pro-img" alt="Our services">
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Services End -->
+        <!-- Intro End -->
 
-        <!-- Testimonial Start -->
-        <div class="container-fluid testimonial pb-5">
-            <div class="container pb-5">
-                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-                    <h4 class="text-primary">Testimonial</h4>
-                    <h1 class="display-5 mb-4">Our Clients Riviews</h1>
-                    <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt sint dolorem autem obcaecati, ipsam mollitia hic.
-                    </p>
+
+        <!-- Services Grid Start -->
+        <div class="container-fluid service pb-4">
+            <div class="container">
+                <div class="row g-4">
+
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="pro-card">
+                            <div class="pro-icon"><i class="fas fa-laptop-code fa-lg text-primary"></i></div>
+                            <h5>Enterprise Solutions Development</h5>
+                            <p>Tailored enterprise software that improves business processes and drives efficiency: robust, scalable and secure.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="pro-card">
+                            <div class="pro-icon"><i class="fas fa-network-wired fa-lg text-primary"></i></div>
+                            <h5>IT Infrastructure Solutions</h5>
+                            <p>Data Centre and Server Room design and build, plus LAN cabling, switching, Wireless LAN and P2P connectivity.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="pro-card">
+                            <div class="pro-icon"><i class="fas fa-mobile-alt fa-lg text-primary"></i></div>
+                            <h5>Mobile Application Development</h5>
+                            <p>Native, hybrid and web-based apps that are intuitive, responsive and tailored to your audience and operations.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="pro-card">
+                            <div class="pro-icon"><i class="fas fa-cloud fa-lg text-primary"></i></div>
+                            <h5>Hosting &amp; Cloud Solutions</h5>
+                            <p>Shared to dedicated hosting, on-site or cloud, with the reliability and scalability to keep you running smoothly.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="pro-card">
+                            <div class="pro-icon"><i class="fas fa-search-dollar fa-lg text-primary"></i></div>
+                            <h5>SEO &amp; Digital Marketing</h5>
+                            <p>On-site and off-site SEO, content and social campaigns that drive targeted traffic and online visibility.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="pro-card">
+                            <div class="pro-icon"><i class="fas fa-shield-alt fa-lg text-primary"></i></div>
+                            <h5>Web Security</h5>
+                            <p>Thorough application and server assessments, with detailed reports and fixes to keep your data protected.</p>
+                        </div>
+                    </div>
+
                 </div>
-                <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="testimonial-item">
-                        <div class="testimonial-quote-left">
-                            <i class="fas fa-quote-left fa-2x"></i>
+            </div>
+        </div>
+        <!-- Services Grid End -->
+
+
+        <!-- Get In Touch Start (picture 2) -->
+        <div class="container-fluid pb-5">
+            <div class="container">
+                <div class="contact-panel wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="row g-0 align-items-stretch">
+                        <div class="col-lg-7 p-4 p-lg-5 d-flex flex-column justify-content-center">
+                            <div class="section-label text-primary mb-2">Get In Touch</div>
+                            <h2 class="mb-2">Let's have a chat.</h2>
+                            <p class="mb-3">Tell us about your project and we'll help you find the right solution.</p>
+                            <div><a class="btn btn-primary rounded-pill py-2 px-5" href="contact.html">Get In Touch</a></div>
                         </div>
-                        <div class="testimonial-img">
-                            <img src="img/testimonial-1.jpg" class="img-fluid" alt="Image">
-                        </div>
-                        <div class="testimonial-text">
-                            <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis blanditiis excepturi quisquam temporibus voluptatum reprehenderit culpa, quasi corrupti laborum accusamus.
-                            </p>
-                        </div>
-                        <div class="testimonial-title">
-                            <div>
-                                <h4 class="mb-0">Person Name</h4>
-                                <p class="mb-0">Profession</p>
-                            </div>
-                            <div class="d-flex text-primary">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                        <div class="testimonial-quote-right">
-                            <i class="fas fa-quote-right fa-2x"></i>
-                        </div>
-                    </div>
-                    <div class="testimonial-item">
-                        <div class="testimonial-quote-left">
-                            <i class="fas fa-quote-left fa-2x"></i>
-                        </div>
-                        <div class="testimonial-img">
-                            <img src="img/testimonial-2.jpg" class="img-fluid" alt="Image">
-                        </div>
-                        <div class="testimonial-text">
-                            <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis blanditiis excepturi quisquam temporibus voluptatum reprehenderit culpa, quasi corrupti laborum accusamus.
-                            </p>
-                        </div>
-                        <div class="testimonial-title">
-                            <div>
-                                <h4 class="mb-0">Person Name</h4>
-                                <p class="mb-0">Profession</p>
-                            </div>
-                            <div class="d-flex text-primary">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                        <div class="testimonial-quote-right">
-                            <i class="fas fa-quote-right fa-2x"></i>
-                        </div>
-                    </div>
-                    <div class="testimonial-item">
-                        <div class="testimonial-quote-left">
-                            <i class="fas fa-quote-left fa-2x"></i>
-                        </div>
-                        <div class="testimonial-img">
-                            <img src="img/testimonial-3.jpg" class="img-fluid" alt="Image">
-                        </div>
-                        <div class="testimonial-text">
-                            <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis blanditiis excepturi quisquam temporibus voluptatum reprehenderit culpa, quasi corrupti laborum accusamus.
-                            </p>
-                        </div>
-                        <div class="testimonial-title">
-                            <div>
-                                <h4 class="mb-0">Person Name</h4>
-                                <p class="mb-0">Profession</p>
-                            </div>
-                            <div class="d-flex text-primary">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                        <div class="testimonial-quote-right">
-                            <i class="fas fa-quote-right fa-2x"></i>
-                        </div>
-                    </div>
-                    <div class="testimonial-item">
-                        <div class="testimonial-quote-left">
-                            <i class="fas fa-quote-left fa-2x"></i>
-                        </div>
-                        <div class="testimonial-img">
-                            <img src="img/testimonial-2.jpg" class="img-fluid" alt="Image">
-                        </div>
-                        <div class="testimonial-text">
-                            <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis blanditiis excepturi quisquam temporibus voluptatum reprehenderit culpa, quasi corrupti laborum accusamus.
-                            </p>
-                        </div>
-                        <div class="testimonial-title">
-                            <div>
-                                <h4 class="mb-0">Person Name</h4>
-                                <p class="mb-0">Profession</p>
-                            </div>
-                            <div class="d-flex text-primary">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                        <div class="testimonial-quote-right">
-                            <i class="fas fa-quote-right fa-2x"></i>
+                        <div class="col-lg-5">
+                            
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Testimonial End -->
+        <!-- Get In Touch End -->
 
         <!-- Footer Start -->
-        <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
-            <div class="container py-5 border-start-0 border-end-0" style="border: 1px solid; border-color: rgb(255, 255, 255, 0.08);">
-                <div class="row g-5">
+        <div class="container-fluid footer py-4 wow fadeIn" data-wow-delay="0.2s">
+            <div class="container py-4 border-start-0 border-end-0" style="border: 1px solid; border-color: rgb(255, 255, 255, 0.08);">
+                <div class="row g-4">
                     <div class="col-md-6 col-lg-6 col-xl-4">
                         <div class="footer-item">
                                                    <a href="index.html" class="p-0">
                                 <img src="img/logo.png" alt="Stocker Logo" style="max-height: 50px;">
                             </a>
                             <p class="mb-4">Dolor amet sit justo amet elitr clita ipsum elitr est.Lorem ipsum dolor sit amet, consectetur adipiscing...</p>
-                    
+                       
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 col-xl-2">
@@ -374,6 +355,7 @@
         
 
 
+
         <!-- Back to Top -->
         <a href="#" class="btn btn-primary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>   
 
@@ -391,6 +373,9 @@
 
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
+
+        <!-- Services dropdown: open on hover (desktop only); clicking "Services" still goes to service.html -->
+       
     </body>
 
 </html>
