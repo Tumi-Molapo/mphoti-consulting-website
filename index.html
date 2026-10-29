@@ -3,10 +3,10 @@
 
     <head>
         <meta charset="utf-8">
-        <title>Stocker - Stock Market Website Template</title>
+        <title>Mphoti Consulting | Technology Consulting &amp; Digital Solutions</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="" name="keywords">
-        <meta content="" name="description">
+        <meta content="technology consulting, IT strategy, cloud solutions, cybersecurity, software development, digital transformation, Mphoti Consulting" name="keywords">
+        <meta content="Mphoti Consulting is a technology consulting company helping businesses modernise, secure and scale with cloud, cybersecurity, data and custom software solutions." name="description">
 
         <!-- Google Web Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,6 +28,120 @@
 
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
+                <!-- Home page design -->
+        <style>
+            :root { --mp-navy: #071426; --mp-accent: var(--bs-primary, #FE2D2D); }
+
+            /* Hero */
+            .mp-hero { position: relative; color: #fff; padding: 130px 0 150px;
+                background: linear-gradient(100deg, rgba(7,20,38,.95) 0%, rgba(7,20,38,.80) 48%, rgba(7,20,38,.40) 100%), url(img/carousel-1.jpg) center / cover no-repeat; }
+            .mp-badge { display: inline-block; padding: .4rem 1.1rem; border: 1px solid rgba(255,255,255,.35); border-radius: 50rem;
+                background: rgba(255,255,255,.08); font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 1.25rem; }
+            .mp-hero h1 { font-size: clamp(2.3rem, 5.2vw, 4rem); font-weight: 800; line-height: 1.08; margin-bottom: 1.25rem; color: #fff; }
+            .mp-hero h1 span { color: var(--mp-accent); }
+            .mp-hero .mp-lead { font-size: 1.2rem; max-width: 620px; color: rgba(255,255,255,.88); margin-bottom: 1.75rem; }
+            .mp-checks { display: flex; flex-wrap: wrap; gap: .75rem 1.75rem; margin-top: 1.75rem; font-weight: 500; }
+            .mp-checks i { color: var(--mp-accent); margin-right: .5rem; }
+
+            /* Quick-links strip overlapping the hero */
+            .mp-strip { position: relative; z-index: 2; margin-top: -80px; }
+            .mp-card { display: block; height: 100%; background: #fff; border-radius: 14px; padding: 1.5rem; color: inherit; text-decoration: none;
+                box-shadow: 0 12px 32px rgba(7,20,38,.14); border-bottom: 4px solid var(--mp-accent); }
+            .mp-card:hover { color: inherit; box-shadow: 0 16px 38px rgba(7,20,38,.22); }
+            .mp-card h5 { font-weight: 700; margin-bottom: .35rem; }
+            .mp-card p { margin: 0; font-size: .92rem; }
+            .mp-icon { width: 54px; height: 54px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+                background: rgba(7,20,38,.06); color: var(--mp-accent); font-size: 1.35rem; margin-bottom: 1rem; }
+
+            /* Sections */
+            .mp-section { padding: 4rem 0; }
+            .mp-tag { color: var(--mp-accent); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; font-size: .9rem; }
+            .mp-list { list-style: none; padding: 0; margin: 0 0 1.5rem; }
+            .mp-list li { display: flex; gap: .85rem; margin-bottom: 1rem; }
+            .mp-list i { color: var(--mp-accent); margin-top: .3rem; }
+            .mp-list strong { display: block; }
+
+            /* Steps */
+            .mp-steps { background: #F3F7FC; }
+            .mp-step { text-align: center; padding: 0 .5rem; }
+            .mp-step-num { width: 52px; height: 52px; border-radius: 50%; background: var(--mp-accent); color: #fff; font-weight: 700; font-size: 1.2rem;
+                display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; }
+            .mp-step h5 { font-weight: 700; }
+
+            @media (max-width: 767.98px) {
+                .mp-hero { padding: 100px 0 120px; }
+                .mp-section { padding: 3rem 0; }
+            }
+
+            /* Testimonials (CSS-only slider) */
+            .mp-radio { position: absolute; opacity: 0; width: 0; height: 0; pointer-events: none; }
+            .mp-arrows { display: flex; justify-content: space-between; }
+            .mp-arrow { display: inline-flex; align-items: center; justify-content: center; width: 62px; height: 30px; margin: 0; border-radius: 50rem;
+                background: var(--mp-accent); color: #fff; cursor: pointer; }
+            #mp-t1:checked ~ .mp-arrows .mp-arrow:first-child,
+            #mp-t2:checked ~ .mp-arrows .mp-arrow:last-child { opacity: .35; }
+            .mp-viewport { overflow: hidden; padding: 58px 0 26px; }
+            .mp-track { display: flex; transition: transform .5s ease; }
+            #mp-t2:checked ~ .mp-viewport .mp-track { transform: translateX(-100%); }
+            .mp-page { display: flex; gap: 1.5rem; min-width: 100%; }
+            .mp-tcard { position: relative; flex: 1; background: #F7F7F7; border-radius: 10px; padding: 3.75rem 1.5rem 1.5rem; text-align: center; }
+            .mp-tphoto { position: absolute; top: -42px; left: 50%; transform: translateX(-50%); width: 84px; height: 84px; border-radius: 50%;
+                border: 4px solid #fff; object-fit: cover; }
+            .mp-tq { position: absolute; width: 54px; height: 54px; border-radius: 50%; background: #fff; color: var(--mp-accent);
+                display: flex; align-items: center; justify-content: center; font-size: 1.5rem; }
+            .mp-tq-l { top: -14px; left: 14px; }
+            .mp-tq-r { bottom: -16px; right: 14px; }
+            .mp-ttext { margin-bottom: 1.5rem; }
+            .mp-tfoot { display: flex; justify-content: space-between; align-items: flex-start; text-align: left; padding-bottom: .5rem; }
+            .mp-tfoot h5 { font-weight: 700; }
+            .mp-tfoot span { font-size: .9rem; opacity: .75; }
+            .mp-stars { color: var(--mp-accent); white-space: nowrap; }
+            .mp-dots { display: flex; justify-content: center; gap: 12px; }
+            .mp-dots label { width: 26px; height: 26px; margin: 0; border-radius: 50%; border: 5px solid var(--mp-accent); background: #fff; cursor: pointer; }
+            #mp-t1:checked ~ .mp-dots label:nth-child(1),
+            #mp-t2:checked ~ .mp-dots label:nth-child(2) { border-color: #1B2A3A; background: var(--mp-accent); }
+
+            @media (max-width: 767.98px) {
+                .mp-tcard:nth-child(n+2) { display: none; }
+            }
+
+            /* ---------- CSS that replaces the JavaScript behaviours ---------- */
+            html { scroll-behavior: smooth; }
+
+            /* Page loader: fades out on its own (was hidden by main.js) */
+            #spinner { animation: mp-loader-out .5s ease .4s forwards; pointer-events: none; }
+            @keyframes mp-loader-out { to { opacity: 0; visibility: hidden; } }
+
+            /* Mobile menu: checkbox toggle (was Bootstrap collapse) */
+            .mp-nav-check { position: absolute; opacity: 0; width: 0; height: 0; pointer-events: none; }
+            .navbar-toggler { cursor: pointer; margin: 0; }
+            .mp-nav-check:checked ~ .navbar-collapse { display: block !important; }
+            @media (min-width: 992px) { .mp-nav-check:checked ~ .navbar-collapse { display: flex !important; } }
+
+            /* Services dropdown: opens on hover or keyboard focus (was Bootstrap dropdown) */
+            .navbar .dropdown { position: relative; }
+            .navbar .dropdown > .nav-link { cursor: pointer; }
+            .navbar .dropdown:hover > .dropdown-menu,
+            .navbar .dropdown:focus-within > .dropdown-menu { display: block; }
+
+            /* Back-to-top button: always clickable, fades in as you scroll (was jQuery) */
+            .back-to-top { display: inline-flex !important; align-items: center; justify-content: center; }
+            @supports (animation-timeline: scroll()) {
+                .back-to-top { animation: mp-btt linear both; animation-timeline: scroll(root); animation-range: 0 320px; }
+                @keyframes mp-btt { from { opacity: 0; visibility: hidden; } to { opacity: 1; visibility: visible; } }
+            }
+
+            /* Footer fade-in on scroll (was WOW.js fadeIn) */
+            @supports (animation-timeline: view()) {
+                .footer.wow { animation: mp-fade linear both; animation-timeline: view(); animation-range: entry 0% entry 60%; }
+                @keyframes mp-fade { from { opacity: 0; } to { opacity: 1; } }
+            }
+
+            @media (prefers-reduced-motion: reduce) {
+                html { scroll-behavior: auto; }
+                #spinner { animation-duration: .01s; animation-delay: 0s; }
+            }
+        </style>
     </head>
 
     <body>
@@ -39,15 +153,12 @@
             </div>
         </div>
         <!-- Spinner End -->
-
-
         <!-- Navbar & Hero Start -->
         <div class="container-fluid position-relative p-0">
           
-            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+           <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
                 <a href="index.html" class="navbar-brand p-0">
-                    <h1 class="text-primary"><i class="fas fa-search-dollar me-3"></i>Stocker</h1>
-                    <!-- <img src="img/logo.png" alt="Logo"> -->
+                    <img src="img/logo.png" alt="Mphoti Logo" style="max-height: 60px;">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="fa fa-bars"></span>
@@ -77,6 +188,19 @@
                 </div>
             </nav>
 
+           
+                
+
+            <!-- Hero Start -->
+            <section class="mp-hero">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <h1>Technology that <span>powers your growth</span></h1>
+                            <p class="mp-lead">We help organisations turn technology into a competitive edge with smart strategy, secure systems and software built to scale.</p>
+                            <div class="d-flex flex-wrap gap-3">
+                                <a class="btn btn-primary rounded-pill py-3 px-5" href="service.html">Get Started</a>
+                                <a class="btn btn-light rounded-pill py-3 px-4" href="https://www.youtube.com/watch?v=T5sSxycDatw" target="_blank" rel="noopener noreferrer"><i class="fas fa-play-circle me-2"></i> Watch Video</a>
             
 
             <!-- Carousel Start -->
@@ -109,792 +233,293 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="header-carousel-item">
-                    <img src="img/carousel-2.jpg" class="img-fluid w-100" alt="Image">
-                    <div class="carousel-caption">
-                        <div class="container">
-                            <div class="row g-5">
-                                <div class="col-12 animated fadeInUp">
-                                    <div class="text-center">
-                                        <h4 class="text-primary text-uppercase fw-bold mb-4">Welcome To Stocker</h4>
-                                        <h1 class="display-4 text-uppercase text-white mb-4">Invest your money with higher return</h1>
-                                        <p class="mb-5 fs-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy... 
-                                        </p>
-                                        <div class="d-flex justify-content-center flex-shrink-0 mb-4">
-                                            <a class="btn btn-light rounded-pill py-3 px-4 px-md-5 me-2" href="#"><i class="fas fa-play-circle me-2"></i> Watch Video</a>
-                                            <a class="btn btn-primary rounded-pill py-3 px-4 px-md-5 ms-2" href="#">Learn More</a>
-                                        </div>
-                                        <div class="d-flex align-items-center justify-content-center">
-                                            <h2 class="text-white me-2">Follow Us:</h2>
-                                            <div class="d-flex justify-content-end ms-2">
-                                                <a class="btn btn-md-square btn-light rounded-circle me-2" href=""><i class="fab fa-facebook-f"></i></a>
-                                                <a class="btn btn-md-square btn-light rounded-circle mx-2" href=""><i class="fab fa-twitter"></i></a>
-                                                <a class="btn btn-md-square btn-light rounded-circle mx-2" href=""><i class="fab fa-instagram"></i></a>
-                                                <a class="btn btn-md-square btn-light rounded-circle ms-2" href=""><i class="fab fa-linkedin-in"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="mp-checks">
+                                <span><i class="fas fa-check-circle"></i>Business-first thinking</span>
+                                <span><i class="fas fa-check-circle"></i>Secure by design</span>
+                                <span><i class="fas fa-check-circle"></i>Support that stays</span>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- Carousel End -->
+            </section>
+            <!-- Hero End -->
         </div>
         <!-- Navbar & Hero End -->
 
 
-        <!-- Abvout Start -->
-        <div class="container-fluid about py-5">
-            <div class="container py-5">
+        <!-- What We Do Start -->
+        <div class="container mp-strip">
+            <div class="row g-4">
+                <div class="col-sm-6 col-lg-3">
+                    <a href="service.html" class="mp-card">
+                        <div class="mp-icon"><i class="fas fa-cloud"></i></div>
+                        <h5>Cloud Solutions</h5>
+                        <p>Work faster with infrastructure that grows with you.</p>
+                    </a>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <a href="service.html" class="mp-card">
+                        <div class="mp-icon"><i class="fas fa-shield-alt"></i></div>
+                        <h5>Cybersecurity</h5>
+                        <p>Keep your data and systems safe from digital threats.</p>
+                    </a>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <a href="service.html" class="mp-card">
+                        <div class="mp-icon"><i class="fas fa-laptop-code"></i></div>
+                        <h5>Software Development</h5>
+                        <p>Tailored applications that simplify your daily work.</p>
+                    </a>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <a href="service.html" class="mp-card">
+                        <div class="mp-icon"><i class="fas fa-chart-pie"></i></div>
+                        <h5>Data &amp; Analytics</h5>
+                        <p>Clear insights for confident, informed decisions.</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- What We Do End -->
+
+
+        <!-- Who We Are Start -->
+        <div class="mp-section">
+            <div class="container">
                 <div class="row g-5 align-items-center">
-                    <div class="col-xl-7 wow fadeInLeft" data-wow-delay="0.2s">
-                        <div>
-                            <h4 class="text-primary">About Us</h4>
-                            <h1 class="display-5 mb-4">Meet our company unless miss the opportunity</h1>
-                            <p class="mb-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum velit temporibus repudiandae ipsa, eaque perspiciatis cumque incidunt tenetur sequi reiciendis.
-                            </p>
-                            <div class="row g-4">
-                                <div class="col-md-6 col-lg-6 col-xl-6">
-                                    <div class="d-flex">
-                                        <div><i class="fas fa-lightbulb fa-3x text-primary"></i></div>
-                                        <div class="ms-4">
-                                            <h4>Business Consuluting</h4>
-                                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-lg-6 col-xl-6">
-                                    <div class="d-flex">
-                                        <div><i class="bi bi-bookmark-heart-fill fa-3x text-primary"></i></div>
-                                        <div class="ms-4">
-                                            <h4>Year Of Expertise</h4>
-                                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <a href="#" class="btn btn-primary rounded-pill py-3 px-5 flex-shrink-0">Discover Now</a>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="d-flex">
-                                        <i class="fas fa-phone-alt fa-2x text-primary me-4"></i>
-                                        <div>
-                                            <h4>Call Us</h4>
-                                            <p class="mb-0 fs-5" style="letter-spacing: 1px;">+01234567890</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="col-lg-6">
+                        <span class="mp-tag">Who We Are</span>
+                        <h2 class="display-6 fw-bold mt-2 mb-3">A technology partner that listens first</h2>
+                        <p class="mb-4">Mphoti Consulting helps organisations make confident technology decisions. We design practical solutions that fit your people, your processes and your goals.</p>
+                        <ul class="mp-list">
+                            <li><i class="fas fa-check-circle"></i><div><strong>Business-first thinking</strong>We start with your goals, then choose the technology to match.</div></li>
+                            <li><i class="fas fa-check-circle"></i><div><strong>A true partnership</strong>We work alongside your team, not just for it.</div></li>
+                            <li><i class="fas fa-check-circle"></i><div><strong>Security you can trust</strong>Protecting your data is built into everything we deliver.</div></li>
+                        </ul>
+                        <a href="about.html" class="btn btn-primary rounded-pill py-3 px-5">About Mphoti</a>
                     </div>
-                    <div class="col-xl-5 wow fadeInRight" data-wow-delay="0.2s">
-                        <div class="bg-primary rounded position-relative overflow-hidden">
-                            <img src="img/about-2.png" class="img-fluid rounded w-100" alt="">
-                            
-                            <div class="" style="position: absolute; top: -15px; right: -15px;">
-                                <img src="img/about-3.png" class="img-fluid" style="width: 150px; height: 150px; opacity: 0.7;" alt="">
-                            </div>
-                            <div class="" style="position: absolute; top: -20px; left: 10px; transform: rotate(90deg);">
-                                <img src="img/about-4.png" class="img-fluid" style="width: 100px; height: 150px; opacity: 0.9;" alt="">
-                            </div>
-                            <div class="rounded-bottom">
-                                <img src="img/about-5.jpg" class="img-fluid rounded-bottom w-100" alt="">
-                            </div>
+                    <div class="col-lg-6">
+                        <div class="bg-primary rounded overflow-hidden">
+                            <img src="img/about-2.png" class="img-fluid w-100" alt="Mphoti Consulting">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- About End -->
+        <!-- Who We Are End -->
 
-        <!-- Services Start -->
-        <div class="container-fluid service pb-5">
-            <div class="container pb-5">
-                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-                    <h4 class="text-primary">Our Services</h4>
-                    <h1 class="display-5 mb-4">We Services provided best offer</h1>
-                    <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt sint dolorem autem obcaecati, ipsam mollitia hic.
-                    </p>
+
+        <!-- How We Work Start -->
+        <div class="mp-section mp-steps">
+            <div class="container">
+                <div class="text-center mx-auto mb-5" style="max-width: 700px;">
+                    <span class="mp-tag">How We Work</span>
+                    <h2 class="display-6 fw-bold mt-2 mb-0">Four simple steps from idea to impact</h2>
                 </div>
                 <div class="row g-4">
-                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="service-item">
-                            <div class="service-img">
-                                <img src="img/service-1.jpg" class="img-fluid rounded-top w-100" alt="Image">
-                            </div>
-                            <div class="rounded-bottom p-4">
-                                <a href="#" class="h4 d-inline-block mb-4"> Strategy Consulting</a>
-                                <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, sint? Excepturi facilis neque nesciunt similique officiis veritatis,
-                                </p>
-                                <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
-                            </div>
-                        </div>
+                    <div class="col-sm-6 col-lg-3 mp-step">
+                        <div class="mp-step-num">1</div>
+                        <h5>Discover</h5>
+                        <p class="mb-0">We listen and learn about your business.</p>
                     </div>
-                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="service-item">
-                            <div class="service-img">
-                                <img src="img/service-2.jpg" class="img-fluid rounded-top w-100" alt="Image">
-                            </div>
-                            <div class="rounded-bottom p-4">
-                                <a href="#" class="h4 d-inline-block mb-4">Financial Advisory</a>
-                                <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, sint? Excepturi facilis neque nesciunt similique officiis veritatis,
-                                </p>
-                                <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
-                            </div>
-                        </div>
+                    <div class="col-sm-6 col-lg-3 mp-step">
+                        <div class="mp-step-num">2</div>
+                        <h5>Design</h5>
+                        <p class="mb-0">We plan the right solution together.</p>
                     </div>
-                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.6s">
-                        <div class="service-item">
-                            <div class="service-img">
-                                <img src="img/service-3.jpg" class="img-fluid rounded-top w-100" alt="Image">
-                            </div>
-                            <div class="rounded-bottom p-4">
-                                <a href="#" class="h4 d-inline-block mb-4">Managements</a>
-                                <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, sint? Excepturi facilis neque nesciunt similique officiis veritatis,
-                                </p>
-                                <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
-                            </div>
-                        </div>
+                    <div class="col-sm-6 col-lg-3 mp-step">
+                        <div class="mp-step-num">3</div>
+                        <h5>Deliver</h5>
+                        <p class="mb-0">We build, test and launch with care.</p>
                     </div>
-                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="service-item">
-                            <div class="service-img">
-                                <img src="img/service-4.jpg" class="img-fluid rounded-top w-100" alt="Image">
-                            </div>
-                            <div class="rounded-bottom p-4">
-                                <a href="#" class="h4 d-inline-block mb-4">Supply Optimization</a>
-                                <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, sint? Excepturi facilis neque nesciunt similique officiis veritatis,
-                                </p>
-                                <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
-                            </div>
-                        </div>
+                    <div class="col-sm-6 col-lg-3 mp-step">
+                        <div class="mp-step-num">4</div>
+                        <h5>Support</h5>
+                        <p class="mb-0">We stay on hand as you grow.</p>
                     </div>
-                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="service-item">
-                            <div class="service-img">
-                                <img src="img/service-5.jpg" class="img-fluid rounded-top w-100" alt="Image">
-                            </div>
-                            <div class="rounded-bottom p-4">
-                                <a href="#" class="h4 d-inline-block mb-4">Hr Consulting</a>
-                                <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, sint? Excepturi facilis neque nesciunt similique officiis veritatis,
-                                </p>
-                                <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.6s">
-                        <div class="service-item">
-                            <div class="service-img">
-                                <img src="img/service-6.jpg" class="img-fluid rounded-top w-100" alt="Image">
-                            </div>
-                            <div class="rounded-bottom p-4">
-                                <a href="#" class="h4 d-inline-block mb-4">Marketing Consulting</a>
-                                <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, sint? Excepturi facilis neque nesciunt similique officiis veritatis,
-                                </p>
-                                <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
-                            </div>
-                        </div>
-                    </div>
+                </div>
+                <div class="text-center mt-5">
+                    <a href="service.html" class="btn btn-primary rounded-pill py-3 px-5">Explore Our Services</a>
                 </div>
             </div>
         </div>
-        <!-- Services End -->
+        <!-- How We Work End -->
 
-        <!-- Features Start -->
-        <div class="container-fluid feature pb-5">
-            <div class="container pb-5">
-                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-                    <h4 class="text-primary">Our Features</h4>
-                    <h1 class="display-5 mb-4">Connecting businesses, ideas, and people for greater impact.</h1>
-                    <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt sint dolorem autem obcaecati, ipsam mollitia hic.
-                    </p>
-                </div>
-                <div class="row g-4">
-                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="feature-item p-4">
-                            <div class="feature-icon p-4 mb-4">
-                                <i class="fas fa-chart-line fa-4x text-primary"></i>
-                            </div>
-                            <h4>Global Management</h4>
-                            <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea hic laborum odit pariatur...
-                            </p>
-                            <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="feature-item p-4">
-                            <div class="feature-icon p-4 mb-4">
-                                <i class="fas fa-university fa-4x text-primary"></i>
-                            </div>
-                            <h4>Corporate Banking</h4>
-                            <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea hic laborum odit pariatur...
-                            </p>
-                            <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.6s">
-                        <div class="feature-item p-4">
-                            <div class="feature-icon p-4 mb-4">
-                                <i class="fas fa-file-alt fa-4x text-primary"></i>
-                            </div>
-                            <h4>Asset Management</h4>
-                            <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea hic laborum odit pariatur...
-                            </p>
-                            <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.8s">
-                        <div class="feature-item p-4">
-                            <div class="feature-icon p-4 mb-4">
-                                <i class="fas fa-hand-holding-usd fa-4x text-primary"></i>
-                            </div>
-                            <h4>Investment Bank</h4>
-                            <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea hic laborum odit pariatur...
-                            </p>
-                            <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Features End -->
-
-
-        <!-- Offer Start -->
-        <div class="container-fluid offer-section pb-5">
-            <div class="container pb-5">
-                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-                    <h4 class="text-primary">Our Offer</h4>
-                    <h1 class="display-5 mb-4">Benefits We offer</h1>
-                    <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt sint dolorem autem obcaecati, ipsam mollitia hic.
-                    </p>
-                </div>
+        <!-- Careers Start -->
+        <div class="mp-section">
+            <div class="container">
                 <div class="row g-5 align-items-center">
-                    <div class="col-xl-5 wow fadeInLeft" data-wow-delay="0.2s">
-                        <div class="nav nav-pills bg-light rounded p-5">
-                            <a class="accordion-link p-4 active mb-4" data-bs-toggle="pill" href="#collapseOne">
-                                <h5 class="mb-0">Lending money for investment of your new projects</h5>
-                            </a>
-                            <a class="accordion-link p-4 mb-4" data-bs-toggle="pill" href="#collapseTwo">
-                                <h5 class="mb-0">Lending money for investment of your new projects</h5>
-                            </a>
-                            <a class="accordion-link p-4 mb-4" data-bs-toggle="pill" href="#collapseThree">
-                                <h5 class="mb-0">Mobile payment is more flexible and easy for all investors</h5>
-                            </a>
-                            <a class="accordion-link p-4 mb-0" data-bs-toggle="pill" href="#collapseFour">
-                                <h5 class="mb-0">all transaction is kept free for the member of pro traders</h5>
-                            </a>
-                        </div>
+                    <div class="col-lg-6 order-lg-2">
+                        <img src="img/interns.jpg" class="img-fluid w-100 rounded" alt="Mphoti interns and consultants working together">
                     </div>
-                    <div class="col-xl-7 wow fadeInRight" data-wow-delay="0.4s">
-                        <div class="tab-content">
-                            <div id="collapseOne" class="tab-pane fade show p-0 active">
-                                <div class="row g-4">
-                                    <div class="col-md-7">
-                                        <img src="img/offer-1.jpg" class="img-fluid w-100 rounded" alt="">
-                                    </div>
-                                    <div class="col-md-5">
-                                        <h1 class="display-5 mb-4">The stock market provides a venue...</h1>
-                                        <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis amet sequi molestiae tenetur eum mollitia, blanditiis, magnam illo magni error dolore unde perspiciatis tempore et totam corrupti dignissimos aut praesentium?
-                                        </p>
-                                        <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="collapseTwo" class="tab-pane fade show p-0">
-                                <div class="row g-4">
-                                    <div class="col-md-7">
-                                        <img src="img/offer-2.jpg" class="img-fluid w-100 rounded" alt="">
-                                    </div>
-                                    <div class="col-md-5">
-                                        <h1 class="display-5 mb-4">The stock market provides a venue...</h1>
-                                        <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis amet sequi molestiae tenetur eum mollitia, blanditiis, magnam illo magni error dolore unde perspiciatis tempore et totam corrupti dignissimos aut praesentium?
-                                        </p>
-                                        <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="collapseThree" class="tab-pane fade show p-0">
-                                <div class="row g-4">
-                                    <div class="col-md-7">
-                                        <img src="img/offer-3.jpg" class="img-fluid w-100 rounded" alt="">
-                                    </div>
-                                    <div class="col-md-5">
-                                        <h1 class="display-5 mb-4">The stock market provides a venue...</h1>
-                                        <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis amet sequi molestiae tenetur eum mollitia, blanditiis, magnam illo magni error dolore unde perspiciatis tempore et totam corrupti dignissimos aut praesentium?
-                                        </p>
-                                        <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="collapseFour" class="tab-pane fade show p-0">
-                                <div class="row g-4">
-                                    <div class="col-md-7">
-                                        <img src="img/offer-4.jpg" class="img-fluid w-100 rounded" alt="">
-                                    </div>
-                                    <div class="col-md-5">
-                                        <h1 class="display-5 mb-4">The stock market provides a venue...</h1>
-                                        <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis amet sequi molestiae tenetur eum mollitia, blanditiis, magnam illo magni error dolore unde perspiciatis tempore et totam corrupti dignissimos aut praesentium?
-                                        </p>
-                                        <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="col-lg-6 order-lg-1">
+                        <span class="mp-tag">Careers</span>
+                        <h2 class="display-6 fw-bold mt-2 mb-3">Grow your career with Mphoti</h2>
+                        <p class="mb-4">We are always interested in curious, driven people who enjoy solving real problems with technology. Join a team that values learning, teamwork and ownership.</p>
+                        <ul class="mp-list">
+                            <li><i class="fas fa-check-circle"></i><div><strong>Learn from experts</strong>Work alongside experienced consultants and engineers.</div></li>
+                            <li><i class="fas fa-check-circle"></i><div><strong>Work on real projects</strong>Contribute to solutions that make a difference for clients.</div></li>
+                            <li><i class="fas fa-check-circle"></i><div><strong>Room to grow</strong>Internships, mentorship and a path to build your skills.</div></li>
+                        </ul>
+                        <a href="careers.html" class="btn btn-primary rounded-pill py-3 px-5">Explore Careers</a>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Offer End -->
+        <!-- Careers End -->
 
-        <!-- Blog Start -->
-        <div class="container-fluid blog pb-5">
-            <div class="container pb-5">
-                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-                    <h4 class="text-primary">Our Blog & News</h4>
-                    <h1 class="display-5 mb-4">Articles For Pro Traders</h1>
-                    <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt sint dolorem autem obcaecati, ipsam mollitia hic.
-                    </p>
+        <!-- Testimonials Start -->
+        <div class="mp-section">
+            <div class="container">
+                <div class="text-center mx-auto mb-4" style="max-width: 700px;">
+                    <span class="mp-tag">Testimonials</span>
+                    <h2 class="display-6 fw-bold mt-2 mb-0">What our clients say</h2>
                 </div>
-                <div class="owl-carousel blog-carousel wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="blog-item p-4">
-                        <div class="blog-img mb-4">
-                            <img src="img/service-1.jpg" class="img-fluid w-100 rounded" alt="">
-                            <div class="blog-title">
-                                <a href="#" class="btn">Dividend Stocks</a>
+                <div class="mp-testi">
+                    <input type="radio" name="mp-testi" id="mp-t1" class="mp-radio" checked>
+                    <input type="radio" name="mp-testi" id="mp-t2" class="mp-radio">
+                    <div class="mp-arrows">
+                        <label for="mp-t1" class="mp-arrow" aria-label="Previous testimonials"><i class="fa fa-angle-left"></i></label>
+                        <label for="mp-t2" class="mp-arrow" aria-label="Next testimonials"><i class="fa fa-angle-right"></i></label>
+                    </div>
+                    <div class="mp-viewport">
+                        <div class="mp-track">
+                            <div class="mp-page">
+                            <div class="mp-tcard">
+                                <span class="mp-tq mp-tq-l"><i class="fas fa-quote-left"></i></span>
+                                <img src="img/client-1.png" class="mp-tphoto" alt="Portrait of Thabo Mokoena">
+                                <p class="mp-ttext">Mphoti took the time to understand our business and delivered a cloud solution that simply works. Professional, responsive and reliable.</p>
+                                <div class="mp-tfoot">
+                                    <div>
+                                        <h5 class="mb-0">Sipho Mokoena</h5>
+                                        <span>Operations Manager, Retail</span>
+                                    </div>
+                                    <div class="mp-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                </div>
+                                <span class="mp-tq mp-tq-r"><i class="fas fa-quote-right"></i></span>
                             </div>
-                        </div>
-                        <a href="#" class="h4 d-inline-block mb-3">Options Trading Business?</a>
-                        <p class="mb-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore aut aliquam suscipit error corporis accusamus labore....
-                        </p>
-                        <div class="d-flex align-items-center">
-                            <img src="img/testimonial-1.jpg" class="img-fluid rounded-circle" style="width: 60px; height: 60px;" alt="">
-                            <div class="ms-3">
-                                <h5>Admin</h5>
-                                <p class="mb-0">October 9, 2025</p>
+                            <div class="mp-tcard">
+                                <span class="mp-tq mp-tq-l"><i class="fas fa-quote-left"></i></span>
+                                <img src="img/client-2.png" class="mp-tphoto" alt="Portrait of Nomvula Dlamini">
+                                <p class="mp-ttext">Their team made a complex security upgrade feel simple. We now have far more confidence in how our data is protected.</p>
+                                <div class="mp-tfoot">
+                                    <div>
+                                        <h5 class="mb-0">Nomvula Dlamini</h5>
+                                        <span>Finance Director, Financial Services</span>
+                                    </div>
+                                    <div class="mp-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                </div>
+                                <span class="mp-tq mp-tq-r"><i class="fas fa-quote-right"></i></span>
+                            </div>
+                            <div class="mp-tcard">
+                                <span class="mp-tq mp-tq-l"><i class="fas fa-quote-left"></i></span>
+                                <img src="img/client-3.png" class="mp-tphoto" alt="Portrait of Sipho Ndlovu">
+                                <p class="mp-ttext">From the first workshop to launch, communication was clear and the results exceeded what we expected. A true technology partner.</p>
+                                <div class="mp-tfoot">
+                                    <div>
+                                        <h5 class="mb-0">Sipho Ndlovu</h5>
+                                        <span>Head of IT, Education</span>
+                                    </div>
+                                    <div class="mp-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                </div>
+                                <span class="mp-tq mp-tq-r"><i class="fas fa-quote-right"></i></span>
+                            </div>
+                            </div>
+                            <div class="mp-page">
+                            <div class="mp-tcard">
+                                <span class="mp-tq mp-tq-l"><i class="fas fa-quote-left"></i></span>
+                                <img src="img/client-4.png" class="mp-tphoto" alt="Portrait of Lerato Mahlangu">
+                                <p class="mp-ttext">The new platform has saved our staff hours every week. Mphoti listened, delivered on time and continues to support us.</p>
+                                <div class="mp-tfoot">
+                                    <div>
+                                        <h5 class="mb-0">Lerato Mahlangu</h5>
+                                        <span>Practice Manager, Healthcare</span>
+                                    </div>
+                                    <div class="mp-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                </div>
+                                <span class="mp-tq mp-tq-r"><i class="fas fa-quote-right"></i></span>
+                            </div>
+                            <div class="mp-tcard">
+                                <span class="mp-tq mp-tq-l"><i class="fas fa-quote-left"></i></span>
+                                <img src="img/client-5.png" class="mp-tphoto" alt="Portrait of Kwame Mensah">
+                                <p class="mp-ttext">Clear plans, honest advice and no surprises. Mphoti made technology decisions easy for our leadership team.</p>
+                                <div class="mp-tfoot">
+                                    <div>
+                                        <h5 class="mb-0">Kwame Mensah</h5>
+                                        <span>Supply Chain Manager, Logistics</span>
+                                    </div>
+                                    <div class="mp-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                </div>
+                                <span class="mp-tq mp-tq-r"><i class="fas fa-quote-right"></i></span>
+                            </div>
+                            <div class="mp-tcard">
+                                <span class="mp-tq mp-tq-l"><i class="fas fa-quote-left"></i></span>
+                                <img src="img/client-6.png" class="mp-tphoto" alt="Portrait of Amara Okafor">
+                                <p class="mp-ttext">Responsive support and practical solutions. We now spend less time on IT and more time on our clients.</p>
+                                <div class="mp-tfoot">
+                                    <div>
+                                        <h5 class="mb-0">Sipho Dube</h5>
+                                        <span>Managing Director, Professional Services</span>
+                                    </div>
+                                    <div class="mp-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                </div>
+                                <span class="mp-tq mp-tq-r"><i class="fas fa-quote-right"></i></span>
+                            </div>
                             </div>
                         </div>
                     </div>
-                    <div class="blog-item p-4">
-                        <div class="blog-img mb-4">
-                            <img src="img/service-2.jpg" class="img-fluid w-100 rounded" alt="">
-                            <div class="blog-title">
-                                <a href="#" class="btn">Non-Dividend Stocks</a>
-                            </div>
-                        </div>
-                        <a href="#" class="h4 d-inline-block mb-3">Options Trading Business?</a>
-                        <p class="mb-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore aut aliquam suscipit error corporis accusamus labore....
-                        </p>
-                        <div class="d-flex align-items-center">
-                            <img src="img/testimonial-2.jpg" class="img-fluid rounded-circle" style="width: 60px; height: 60px;" alt="">
-                            <div class="ms-3">
-                                <h5>Admin</h5>
-                                <p class="mb-0">October 9, 2025</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="blog-item p-4">
-                        <div class="blog-img mb-4">
-                            <img src="img/service-3.jpg" class="img-fluid w-100 rounded" alt="">
-                            <div class="blog-title">
-                                <a href="#" class="btn">Dividend Stocks</a>
-                            </div>
-                        </div>
-                        <a href="#" class="h4 d-inline-block mb-3">Options Trading Business?</a>
-                        <p class="mb-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore aut aliquam suscipit error corporis accusamus labore....
-                        </p>
-                        <div class="d-flex align-items-center">
-                            <img src="img/testimonial-3.jpg" class="img-fluid rounded-circle" style="width: 60px; height: 60px;" alt="">
-                            <div class="ms-3">
-                                <h5>Admin</h5>
-                                <p class="mb-0">October 9, 2025</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="blog-item p-4">
-                        <div class="blog-img mb-4">
-                            <img src="img/service-4.jpg" class="img-fluid w-100 rounded" alt="">
-                            <div class="blog-title">
-                                <a href="#" class="btn">Non-Dividend Stocks</a>
-                            </div>
-                        </div>
-                        <a href="#" class="h4 d-inline-block mb-3">Options Trading Business?</a>
-                        <p class="mb-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore aut aliquam suscipit error corporis accusamus labore....
-                        </p>
-                        <div class="d-flex align-items-center">
-                            <img src="img/testimonial-1.jpg" class="img-fluid rounded-circle" style="width: 60px; height: 60px;" alt="">
-                            <div class="ms-3">
-                                <h5>Admin</h5>
-                                <p class="mb-0">October 9, 2025</p>
-                            </div>
-                        </div>
+                    <div class="mp-dots">
+                        <label for="mp-t1" aria-label="Show first testimonials"></label>
+                        <label for="mp-t2" aria-label="Show more testimonials"></label>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Blog End -->
+        <!-- Testimonials End -->
 
 
-        <!-- FAQs Start -->
-        <div class="container-fluid faq-section pb-5">
-            <div class="container pb-5 overflow-hidden">
-                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-                    <h4 class="text-primary">FAQs</h4>
-                    <h1 class="display-5 mb-4">Frequently Asked Questions</h1>
-                    <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt sint dolorem autem obcaecati, ipsam mollitia hic.
-                    </p>
-                </div>
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.2s">
-                        <div class="accordion accordion-flush bg-light rounded p-5" id="accordionFlushSection">
-                            <div class="accordion-item rounded-top">
-                                <h2 class="accordion-header" id="flush-headingOne">
-                                    <button class="accordion-button collapsed rounded-top" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                                    What Does This Tool Do?
-                                    </button>
-                                </h2>
-                                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushSection">
-                                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="flush-headingTwo">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                                    What Are The Disadvantages Of Online Trading?
-                                    </button>
-                                </h2>
-                                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushSection">
-                                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="flush-headingThree">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                                    Is Online Trading Safe?
-                                    </button>
-                                </h2>
-                                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushSection">
-                                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="flush-headingFour">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
-                                    What Is Online Trading, And How Dose It Work?
-                                    </button>
-                                </h2>
-                                <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushSection">
-                                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="flush-headingFive">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
-                                    Which App Is Best For Online Trading?
-                                    </button>
-                                </h2>
-                                <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushSection">
-                                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
-                                </div>
-                            </div>
-                            <div class="accordion-item rounded-bottom">
-                                <h2 class="accordion-header" id="flush-headingSix">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
-                                    How To Create A Trading Account?
-                                    </button>
-                                </h2>
-                                <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushSection">
-                                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.2s">
-                        <div class="bg-primary rounded">
-                            <img src="img/about-2.png" class="img-fluid w-100" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- FAQs End -->
-
-
-        <!-- Team Start -->
-        <div class="container-fluid team pb-5">
-            <div class="container pb-5">
-                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-                    <h4 class="text-primary">Our Team</h4>
-                    <h1 class="display-5 mb-4">Meet Our Advisers</h1>
-                    <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt sint dolorem autem obcaecati, ipsam mollitia hic.
-                    </p>
-                </div>
-                <div class="row g-4">
-                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="team-item">
-                            <div class="team-img">
-                                <img src="img/team-1.jpg" class="img-fluid" alt="">
-                            </div>
-                            <div class="team-title">
-                                <h4 class="mb-0">David James</h4>
-                                <p class="mb-0">Profession</p>
-                            </div>
-                            <div class="team-icon">
-                                <a class="btn btn-primary btn-sm-square rounded-circle me-3" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-primary btn-sm-square rounded-circle me-3" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-primary btn-sm-square rounded-circle me-3" href=""><i class="fab fa-linkedin-in"></i></a>
-                                <a class="btn btn-primary btn-sm-square rounded-circle me-0" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="team-item">
-                            <div class="team-img">
-                                <img src="img/team-2.jpg" class="img-fluid" alt="">
-                            </div>
-                            <div class="team-title">
-                                <h4 class="mb-0">David James</h4>
-                                <p class="mb-0">Profession</p>
-                            </div>
-                            <div class="team-icon">
-                                <a class="btn btn-primary btn-sm-square rounded-circle me-3" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-primary btn-sm-square rounded-circle me-3" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-primary btn-sm-square rounded-circle me-3" href=""><i class="fab fa-linkedin-in"></i></a>
-                                <a class="btn btn-primary btn-sm-square rounded-circle me-0" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.6s">
-                        <div class="team-item">
-                            <div class="team-img">
-                                <img src="img/team-3.jpg" class="img-fluid" alt="">
-                            </div>
-                            <div class="team-title">
-                                <h4 class="mb-0">David James</h4>
-                                <p class="mb-0">Profession</p>
-                            </div>
-                            <div class="team-icon">
-                                <a class="btn btn-primary btn-sm-square rounded-circle me-3" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-primary btn-sm-square rounded-circle me-3" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-primary btn-sm-square rounded-circle me-3" href=""><i class="fab fa-linkedin-in"></i></a>
-                                <a class="btn btn-primary btn-sm-square rounded-circle me-0" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.8s">
-                        <div class="team-item">
-                            <div class="team-img">
-                                <img src="img/team-4.jpg" class="img-fluid" alt="">
-                            </div>
-                            <div class="team-title">
-                                <h4 class="mb-0">David James</h4>
-                                <p class="mb-0">Profession</p>
-                            </div>
-                            <div class="team-icon">
-                                <a class="btn btn-primary btn-sm-square rounded-circle me-3" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-primary btn-sm-square rounded-circle me-3" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-primary btn-sm-square rounded-circle me-3" href=""><i class="fab fa-linkedin-in"></i></a>
-                                <a class="btn btn-primary btn-sm-square rounded-circle me-0" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Team End -->
-
-        <!-- Testimonial Start -->
-        <div class="container-fluid testimonial pb-5">
-            <div class="container pb-5">
-                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-                    <h4 class="text-primary">Testimonial</h4>
-                    <h1 class="display-5 mb-4">Our Clients Riviews</h1>
-                    <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt sint dolorem autem obcaecati, ipsam mollitia hic.
-                    </p>
-                </div>
-                <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="testimonial-item">
-                        <div class="testimonial-quote-left">
-                            <i class="fas fa-quote-left fa-2x"></i>
-                        </div>
-                        <div class="testimonial-img">
-                            <img src="img/testimonial-1.jpg" class="img-fluid" alt="Image">
-                        </div>
-                        <div class="testimonial-text">
-                            <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis blanditiis excepturi quisquam temporibus voluptatum reprehenderit culpa, quasi corrupti laborum accusamus.
-                            </p>
-                        </div>
-                        <div class="testimonial-title">
-                            <div>
-                                <h4 class="mb-0">Person Name</h4>
-                                <p class="mb-0">Profession</p>
-                            </div>
-                            <div class="d-flex text-primary">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                        <div class="testimonial-quote-right">
-                            <i class="fas fa-quote-right fa-2x"></i>
-                        </div>
-                    </div>
-                    <div class="testimonial-item">
-                        <div class="testimonial-quote-left">
-                            <i class="fas fa-quote-left fa-2x"></i>
-                        </div>
-                        <div class="testimonial-img">
-                            <img src="img/testimonial-2.jpg" class="img-fluid" alt="Image">
-                        </div>
-                        <div class="testimonial-text">
-                            <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis blanditiis excepturi quisquam temporibus voluptatum reprehenderit culpa, quasi corrupti laborum accusamus.
-                            </p>
-                        </div>
-                        <div class="testimonial-title">
-                            <div>
-                                <h4 class="mb-0">Person Name</h4>
-                                <p class="mb-0">Profession</p>
-                            </div>
-                            <div class="d-flex text-primary">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                        <div class="testimonial-quote-right">
-                            <i class="fas fa-quote-right fa-2x"></i>
-                        </div>
-                    </div>
-                    <div class="testimonial-item">
-                        <div class="testimonial-quote-left">
-                            <i class="fas fa-quote-left fa-2x"></i>
-                        </div>
-                        <div class="testimonial-img">
-                            <img src="img/testimonial-3.jpg" class="img-fluid" alt="Image">
-                        </div>
-                        <div class="testimonial-text">
-                            <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis blanditiis excepturi quisquam temporibus voluptatum reprehenderit culpa, quasi corrupti laborum accusamus.
-                            </p>
-                        </div>
-                        <div class="testimonial-title">
-                            <div>
-                                <h4 class="mb-0">Person Name</h4>
-                                <p class="mb-0">Profession</p>
-                            </div>
-                            <div class="d-flex text-primary">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                        <div class="testimonial-quote-right">
-                            <i class="fas fa-quote-right fa-2x"></i>
-                        </div>
-                    </div>
-                    <div class="testimonial-item">
-                        <div class="testimonial-quote-left">
-                            <i class="fas fa-quote-left fa-2x"></i>
-                        </div>
-                        <div class="testimonial-img">
-                            <img src="img/testimonial-2.jpg" class="img-fluid" alt="Image">
-                        </div>
-                        <div class="testimonial-text">
-                            <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis blanditiis excepturi quisquam temporibus voluptatum reprehenderit culpa, quasi corrupti laborum accusamus.
-                            </p>
-                        </div>
-                        <div class="testimonial-title">
-                            <div>
-                                <h4 class="mb-0">Person Name</h4>
-                                <p class="mb-0">Profession</p>
-                            </div>
-                            <div class="d-flex text-primary">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                        <div class="testimonial-quote-right">
-                            <i class="fas fa-quote-right fa-2x"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Testimonial End -->
 
         <!-- Footer Start -->
-        <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
+           <!-- Footer Start -->
+      <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
             <div class="container py-5 border-start-0 border-end-0" style="border: 1px solid; border-color: rgb(255, 255, 255, 0.08);">
                 <div class="row g-5">
-                    <div class="col-md-6 col-lg-6 col-xl-4">
+                    <div class="col-md-6 col-lg-4">
                         <div class="footer-item">
-                            <a href="index.html" class="p-0">
-                                <h4 class="text-white"><i class="fas fa-search-dollar me-3"></i>Stocker</h4>
-                                <!-- <img src="img/logo.png" alt="Logo"> -->
-                            </a>
-                            <p class="mb-4">Dolor amet sit justo amet elitr clita ipsum elitr est.Lorem ipsum dolor sit amet, consectetur adipiscing...</p>
-                       
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-2">
-                        <div class="footer-item">
-                            <h4 class="text-white mb-4">Quick Links</h4>
-                            <a href="#"><i class="fas fa-angle-right me-2"></i> About Us</a>
-                            <a href="#"><i class="fas fa-angle-right me-2"></i> Feature</a>
-                            <a href="#"><i class="fas fa-angle-right me-2"></i> Attractions</a>
-                            <a href="#"><i class="fas fa-angle-right me-2"></i> Tickets</a>
-                            <a href="#"><i class="fas fa-angle-right me-2"></i> Blog</a>
-                            <a href="#"><i class="fas fa-angle-right me-2"></i> Contact us</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item">
-                            <h4 class="text-white mb-4">Support</h4>
-                            <a href="#"><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
-                            <a href="#"><i class="fas fa-angle-right me-2"></i> Terms & Conditions</a>
-                            <a href="#"><i class="fas fa-angle-right me-2"></i> Disclaimer</a>
-                            <a href="#"><i class="fas fa-angle-right me-2"></i> Support</a>
-                            <a href="#"><i class="fas fa-angle-right me-2"></i> FAQ</a>
-                            <a href="#"><i class="fas fa-angle-right me-2"></i> Help</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item">
-                            <h4 class="text-white mb-4">Contact Info</h4>
-                            <div class="d-flex align-items-center">
-                                <i class="fas fa-map-marker-alt text-primary me-3"></i>
-                                <p class="text-white mb-0">123 Street New York.USA</p>
-                            </div>
+                            <h4 class="text-white mb-4">Contacts Us</h4>
                             <div class="d-flex align-items-center">
                                 <i class="fas fa-envelope text-primary me-3"></i>
-                                <p class="text-white mb-0">info@example.com</p>
+                                <a href="mailto:info@mphoti.co.za" class="text-white mb-0">info@mphoti.co.za</a>
                             </div>
                             <div class="d-flex align-items-center">
                                 <i class="fa fa-phone-alt text-primary me-3"></i>
-                                <p class="text-white mb-0">(+012) 3456 7890</p>
+                                <a href="tel:+27104491515" class="text-white mb-0">+27 (0) 10 449 1515</a>
                             </div>
-                            <div class="d-flex align-items-center mb-4">
-                                <i class="fab fa-firefox-browser text-primary me-3"></i>
-                                <p class="text-white mb-0">Yoursite@ex.com</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="footer-item">
+                            <h4 class="text-white mb-4">Mphoti Consulting</h4>
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-map-marker-alt text-primary me-3"></i>
+                                <p class="text-white mb-0">Johannesburg, Gauteng</p>
                             </div>
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-map-marker-alt text-primary me-3"></i>
+                                <p class="text-white mb-0">Nelspruit, Mpumalanga</p>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-map-marker-alt text-primary me-3"></i>
+                                <p class="text-white mb-0">Polokwane, Limpopo</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-4">
+                        <div class="footer-item">
+                            <h4 class="text-white mb-4">Connect with us</h4>
                             <div class="d-flex">
-                                <a class="btn btn-primary btn-sm-square rounded-circle me-3" href="#"><i class="fab fa-facebook-f text-white"></i></a>
-                                <a class="btn btn-primary btn-sm-square rounded-circle me-3" href="#"><i class="fab fa-twitter text-white"></i></a>
-                                <a class="btn btn-primary btn-sm-square rounded-circle me-3" href="#"><i class="fab fa-instagram text-white"></i></a>
-                                <a class="btn btn-primary btn-sm-square rounded-circle me-0" href="#"><i class="fab fa-linkedin-in text-white"></i></a>
+                                <a class="btn btn-primary btn-sm-square rounded-circle me-3" href="https://www.linkedin.com/company/mphoti-consulting/posts/?feedView=all" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in text-white"></i></a>
+                                <a class="btn btn-primary btn-sm-square rounded-circle me-0" href="https://www.youtube.com/@MphotiConsulting" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube text-white"></i></a>
                             </div>
                         </div>
                     </div>
@@ -902,27 +527,12 @@
             </div>
         </div>
         <!-- Footer End -->
-        
 
 
 
         <!-- Back to Top -->
-        <a href="#" class="btn btn-primary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>   
+        <a href="#" class="btn btn-primary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
 
-        
-        <!-- JavaScript Libraries -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="lib/wow/wow.min.js"></script>
-        <script src="lib/easing/easing.min.js"></script>
-        <script src="lib/waypoints/waypoints.min.js"></script>
-        <script src="lib/counterup/counterup.min.js"></script>
-        <script src="lib/lightbox/js/lightbox.min.js"></script>
-        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-        
-
-        <!-- Template Javascript -->
-        <script src="js/main.js"></script>
     </body>
 
 </html>
