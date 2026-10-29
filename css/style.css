@@ -20,6 +20,8 @@
     bottom: 30px;
     transition: 0.5s;
     z-index: 99;
+    
+    
 }
 
 /*** Button Start ***/
@@ -1272,4 +1274,47 @@
     .ab-cta h2 { font-size: 28px; }
 }
 
+
+/* Footer social buttons (LinkedIn, YouTube):
+   normal colour stays as your theme sets it, and the button changes to #FE2D2D
+   after you click it (it stays #FE2D2D while focused, and on later visits once the link has been visited).
+   Add this at the very end of css/style.css and remove the previous version of this block. */
+
+.footer .btn.btn-primary:focus,
+.footer .btn.btn-primary:focus-visible,
+.footer .btn.btn-primary:active,
+.footer .btn.btn-primary:active:focus,
+.footer .btn.btn-primary:visited {
+    background-color: #FE2D2D !important;
+    border-color: #FE2D2D !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 0 0.2rem rgba(254, 45, 45, 0.35) !important;
+    outline: none;
+}
+
+.footer .btn.btn-primary:focus i,
+.footer .btn.btn-primary:active i,
+.footer .btn.btn-primary:visited i {
+    color: #ffffff;
+}
+
+/* Back-to-top button: turns #458BD5 on hover and stays #458BD5 after the mouse leaves.
+   Add this at the very end of css/style.css.
+*/
+
+.back-to-top.btn.btn-primary {
+    transition: background-color 0s linear 3600s,
+                border-color 0s linear 3600s,
+                color 0s linear 3600s;
+}
+ 
+
+.back-to-top.btn.btn-primary:focus,
+.back-to-top.btn.btn-primary:active {
+    background-color: #458BD5 !important;
+    border-color: #458BD5 !important;
+    color: #ffffff !important;
+    box-shadow: none !important;
+    transition: background-color 0s, border-color 0s, color 0s;
+}
 
